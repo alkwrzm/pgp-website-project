@@ -12,7 +12,7 @@ export const t = {
       title1: 'Menghubungkan Korea & Indonesia',
       title2: 'Melalui Pengalaman Berkesan.',
       desc: 'PT PGP INT PACIFIC menghadirkan pengalaman baru yang menyenangkan bagi penggemar K-Pop, K-Drama, dan K-Beauty melalui acara, konser, fanmeeting, serta kolaborasi bisnis antar negara.',
-      ctaPortfolio: 'Lihat Project Portfolio',
+      ctaPortfolio: 'Lihat Portfolio',
       ctaContact: 'Hubungi Kami',
     },
     services: {
@@ -66,7 +66,7 @@ export const t = {
       title1: 'Connecting Korea & Indonesia',
       title2: 'Through Memorable Experiences.',
       desc: 'PT PGP INT PACIFIC brings fresh, exciting, and memorable experiences for fans of K-Pop, K-Drama, and K-Beauty through quality events, concerts, fanmeetings, and cross-border business collaborations.',
-      ctaPortfolio: 'Explore Selected Projects',
+      ctaPortfolio: 'Explore Projects',
       ctaContact: 'Contact Us',
     },
     services: {

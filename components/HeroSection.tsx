@@ -13,11 +13,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-black to-black -z-10" />
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-10 flex flex-col items-start gap-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-semibold tracking-wider text-white/80 uppercase">
-            {text.badge}
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] text-white">
-            {text.title1} <br/>
+            {text.title1} <br />
             <span className="text-white/50">{text.title2}</span>
           </h1>
           <p className="text-lg md:text-xl text-white/60 max-w-3xl font-light leading-relaxed">

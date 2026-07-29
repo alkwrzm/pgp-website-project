@@ -2,12 +2,12 @@
 
 ## 1. Current Project Overview
 Full-Stack Website & CMS for PGP INT PACIFIC built with Next.js 16 (App Router), Tailwind CSS v4, Prisma, and Supabase Storage.
-Navbar brand updated to clean typography text **PGP INT PACIFIC**.
+Code committed & pushed to GitHub `origin/main` for Vercel auto-deployment.
 
 ## 2. Tech Stack & Environment Variables
 **Stack:** Next.js (App Router), TypeScript, Tailwind CSS v4, Prisma ORM, Supabase Storage, Lucide React icons.
 
-**Required `.env` Variables:**
+**Required `.env` Variables for Vercel Deployment:**
 - `DATABASE_URL`: Connection string for PostgreSQL with `?pgbouncer=true&connection_limit=1` (pooler 6543) or `?connection_limit=5` (direct 5432)
 - `DIRECT_URL`: Direct connection string (port 5432) for Prisma migrations
 - `NEXT_PUBLIC_SUPABASE_URL`: Supabase project URL (`https://mtorxpfzlfurpssyceua.supabase.co`)
@@ -31,4 +31,4 @@ Navbar brand updated to clean typography text **PGP INT PACIFIC**.
 - **Status**: Live & synced to Supabase PostgreSQL via Prisma migration.
 
 ## 5. Next Steps / Todo List
-- Navbar brand typography update completed.
+- Code committed and pushed to GitHub main branch.
