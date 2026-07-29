@@ -1,0 +1,47 @@
+import { prisma } from '@/lib/prisma';
+import HeroSection from '@/components/HeroSection';
+import CompanyProfileSection from '@/components/CompanyProfileSection';
+import ServicesSection from '@/components/ServicesSection';
+import PortfolioSection from '@/components/PortfolioSection';
+import ContactSection from '@/components/ContactSection';
+import { ensureServicesSeeded } from '@/lib/seedServices';
+
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  let projects: any[] = [];
+  let services: any[] = [];
+  let dbError = false;
+
+  try {
+    await ensureServicesSeeded();
+    const [fetchedProjects, fetchedServices] = await Promise.all([
+      prisma.project.findMany({ orderBy: { eventDate: 'desc' } }),
+      prisma.service.findMany({ orderBy: { order: 'asc' } }),
+    ]);
+    projects = fetchedProjects;
+    services = fetchedServices;
+  } catch (error) {
+    console.error('Failed to fetch data for home page:', error);
+    dbError = true;
+  }
+
+  return (
+    <div className="flex flex-col">
+      {/* Hero Section (Bilingual ID / EN) */}
+      <HeroSection />
+
+      {/* About Us / Company Profile (Bilingual ID / EN) */}
+      <CompanyProfileSection />
+
+      {/* Our Services Section (Bilingual ID / EN + Dynamic DB Data) */}
+      <ServicesSection dynamicServices={services} />
+
+      {/* Selected Portfolio Section (Bilingual ID / EN + Grouped Sub-sections) */}
+      <PortfolioSection projects={projects} dbError={dbError} />
+
+      {/* Contact Section (Bilingual ID / EN) */}
+      <ContactSection />
+    </div>
+  );
+}

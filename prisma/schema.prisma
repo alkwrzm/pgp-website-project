@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  category    String
+  imageUrl    String
+  eventDate   DateTime
+  description String?
+  createdAt   DateTime @default(now())
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  subtitle    String?
+  category    String
+  description String?
+  images      String[]
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
