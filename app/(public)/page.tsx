@@ -16,8 +16,8 @@ export default async function Home() {
   try {
     await ensureServicesSeeded();
     const [fetchedProjects, fetchedServices] = await Promise.all([
-      prisma.project.findMany({ orderBy: [{ order: 'asc' }, { eventDate: 'desc' }] }),
-      prisma.service.findMany({ orderBy: { order: 'asc' } }),
+      prisma.project.findMany({ orderBy: [{ order: 'asc' }, { eventDate: 'desc' }] as any }),
+      prisma.service.findMany({ orderBy: { order: 'asc' } as any }),
     ]);
     projects = fetchedProjects;
     services = fetchedServices;
