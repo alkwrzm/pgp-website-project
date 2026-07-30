@@ -1,56 +1,192 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
-import { useTheme } from '@/context/ThemeContext';
-import { t } from '@/lib/translations';
+import { useState, useEffect, useRef } from 'react';
+import { Music, Smartphone, Printer, Sparkles, ChevronDown, Heart, Star, Flame } from 'lucide-react';
+
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+}
 
 export default function HeroSection() {
-  const { lang } = useLanguage();
-  const { theme } = useTheme();
-  const text = t[lang].hero;
-  const isLight = theme === 'light';
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  // Track mouse coordinates for subtle parallax
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMousePos({ x, y });
+  };
+
+  // Click burst particle effect
+  const handleHeroClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+
+    const colors = ['#3BBBE2', '#1A7B9B', '#42C8EC', '#102B3F'];
+    const newParticles: Particle[] = Array.from({ length: 8 }).map((_, i) => ({
+      id: Date.now() + i,
+      x: clickX + (Math.random() - 0.5) * 40,
+      y: clickY + (Math.random() - 0.5) * 40,
+      size: Math.random() * 12 + 8,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    }));
+
+    setParticles((prev) => [...prev.slice(-20), ...newParticles]);
+  };
+
+  // Clean up particles after animation
+  useEffect(() => {
+    if (particles.length === 0) return;
+    const timer = setTimeout(() => {
+      setParticles((prev) => prev.slice(8));
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [particles]);
 
   return (
-    <section className={`relative min-h-[90vh] flex items-center justify-center pt-16 overflow-hidden transition-colors duration-300 ${isLight ? 'bg-slate-50 text-slate-900' : 'bg-black text-white'
-      }`}>
-      <div className={`absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] -z-10 ${isLight ? 'from-slate-200/60 via-slate-50 to-slate-50' : 'from-white/10 via-black to-black'
-        }`} />
+    <section
+      ref={heroRef}
+      onMouseMove={handleMouseMove}
+      onClick={handleHeroClick}
+      className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#F4F9FC] text-[#102B3F] px-4 cursor-pointer select-none"
+    >
+      {/* Dynamic Cursor Light Spotlight */}
+      <div
+        className="absolute w-[500px] h-[500px] bg-[#3BBBE2]/15 rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out"
+        style={{
+          transform: `translate(${mousePos.x * 300}px, ${mousePos.y * 300}px)`,
+        }}
+      />
 
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <div className="md:col-span-10 flex flex-col items-start gap-8">
+      {/* Ambient Glows */}
+      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#1A7B9B]/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-[#3BBBE2]/10 rounded-full blur-3xl pointer-events-none" />
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
-            {text.title1} <br />
-            <span className={isLight ? 'text-slate-500' : 'text-white/50'}>{text.title2}</span>
-          </h1>
-
-          <p className={`text-lg md:text-xl max-w-3xl font-light leading-relaxed ${isLight ? 'text-slate-600' : 'text-white/60'
-            }`}>
-            {text.desc}
-          </p>
-
-          <div className="flex flex-wrap items-center gap-4 mt-2">
-            <a
-              href="#portfolio"
-              className={`group flex items-center gap-2 px-8 py-4 rounded-full font-medium transition-all shadow-xl ${isLight
-                ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-slate-900/10'
-                : 'bg-white text-black hover:bg-white/90 shadow-white/5'
-                }`}
-            >
-              {text.ctaPortfolio}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#contact"
-              className={`px-8 py-4 font-medium transition-colors ${isLight ? 'text-slate-700 hover:text-slate-900' : 'text-white hover:text-white/70'
-                }`}
-            >
-              {text.ctaContact}
-            </a>
+      {/* Floating Interactive Badge 1: Top-Left */}
+      <div
+        className="absolute top-16 left-6 md:top-24 md:left-24 transition-transform duration-500 ease-out pointer-events-auto hidden md:block"
+        style={{
+          transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px) rotate(-3deg)`,
+        }}
+      >
+        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#607D94]/20 shadow-lg shadow-[#1A7B9B]/5 text-[#102B3F] hover:scale-110 hover:border-[#3BBBE2] hover:shadow-[#3BBBE2]/20 transition-all cursor-pointer group">
+          <div className="w-8 h-8 rounded-xl bg-[#3BBBE2]/15 text-[#1A7B9B] flex items-center justify-center group-hover:bg-[#3BBBE2] group-hover:text-white transition-colors">
+            <Music className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <span className="block text-xs font-bold leading-tight">K-Pop Concerts</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">& Fanmeeting</span>
           </div>
         </div>
       </div>
+
+      {/* Floating Interactive Badge 2: Top-Right */}
+      <div
+        className="absolute top-12 right-6 md:top-20 md:right-28 transition-transform duration-500 ease-out pointer-events-auto hidden md:block"
+        style={{
+          transform: `translate(${mousePos.x * 50}px, ${mousePos.y * 30}px) rotate(4deg)`,
+        }}
+      >
+        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#607D94]/20 shadow-lg shadow-[#1A7B9B]/5 text-[#102B3F] hover:scale-110 hover:border-[#3BBBE2] hover:shadow-[#3BBBE2]/20 transition-all cursor-pointer group">
+          <div className="w-8 h-8 rounded-xl bg-[#3BBBE2]/15 text-[#1A7B9B] flex items-center justify-center group-hover:bg-[#3BBBE2] group-hover:text-white transition-colors">
+            <Smartphone className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <span className="block text-xs font-bold leading-tight">PocketDrop</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">Photocard App</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Interactive Badge 3: Bottom-Left */}
+      <div
+        className="absolute bottom-20 left-8 md:bottom-28 md:left-32 transition-transform duration-500 ease-out pointer-events-auto hidden lg:block"
+        style={{
+          transform: `translate(${mousePos.x * -35}px, ${mousePos.y * 45}px) rotate(2deg)`,
+        }}
+      >
+        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#607D94]/20 shadow-lg shadow-[#1A7B9B]/5 text-[#102B3F] hover:scale-110 hover:border-[#3BBBE2] hover:shadow-[#3BBBE2]/20 transition-all cursor-pointer group">
+          <div className="w-8 h-8 rounded-xl bg-[#3BBBE2]/15 text-[#1A7B9B] flex items-center justify-center group-hover:bg-[#3BBBE2] group-hover:text-white transition-colors">
+            <Printer className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <span className="block text-xs font-bold leading-tight">PIC2GO</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">Photo Kiosks</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Interactive Badge 4: Bottom-Right */}
+      <div
+        className="absolute bottom-24 right-8 md:bottom-32 md:right-36 transition-transform duration-500 ease-out pointer-events-auto hidden lg:block"
+        style={{
+          transform: `translate(${mousePos.x * 40}px, ${mousePos.y * -35}px) rotate(-4deg)`,
+        }}
+      >
+        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[#607D94]/20 shadow-lg shadow-[#1A7B9B]/5 text-[#102B3F] hover:scale-110 hover:border-[#3BBBE2] hover:shadow-[#3BBBE2]/20 transition-all cursor-pointer group">
+          <div className="w-8 h-8 rounded-xl bg-[#3BBBE2]/15 text-[#1A7B9B] flex items-center justify-center group-hover:bg-[#3BBBE2] group-hover:text-white transition-colors">
+            <Sparkles className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <span className="block text-xs font-bold leading-tight">K-Drama & Beauty</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">Exhibitions</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Big Center Title */}
+      <div
+        className="text-center relative z-10 max-w-6xl mx-auto transition-transform duration-300 ease-out pointer-events-auto"
+        style={{
+          transform: `translate(${mousePos.x * 15}px, ${mousePos.y * 15}px)`,
+        }}
+      >
+        <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black tracking-tighter leading-none text-[#102B3F] transition-transform duration-300 hover:scale-[1.02]">
+          Playground{' '}
+          <span className="bg-gradient-to-r from-[#3BBBE2] via-[#1A7B9B] to-[#3BBBE2] bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent inline-block hover:rotate-1 transition-transform">
+            Playful
+          </span>
+        </h1>
+      </div>
+
+      {/* Click Burst Particles */}
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="absolute rounded-full pointer-events-none animate-ping"
+          style={{
+            left: `${p.x}px`,
+            top: `${p.y}px`,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            backgroundColor: p.color,
+          }}
+        />
+      ))}
+
+      {/* Interactive Bottom Scroll Prompt */}
+      <a
+        href="#about"
+        onClick={(e) => e.stopPropagation()}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[#607D94] hover:text-[#3BBBE2] transition-colors group z-20"
+      >
+        <span className="text-[11px] font-mono font-semibold uppercase tracking-widest text-[#1A7B9B]">
+          Explore Playground
+        </span>
+        <div className="w-8 h-8 rounded-full border border-[#607D94]/20 bg-white/80 backdrop-blur-md flex items-center justify-center group-hover:border-[#3BBBE2] group-hover:bg-[#3BBBE2] group-hover:text-white transition-all animate-bounce">
+          <ChevronDown className="w-4 h-4" />
+        </div>
+      </a>
     </section>
   );
 }

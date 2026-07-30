@@ -2,18 +2,16 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'id' | 'en';
+export type Language = 'id' | 'en' | 'ko';
 
 interface LanguageContextType {
   lang: Language;
   setLang: (lang: Language) => void;
-  toggleLang: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
   lang: 'id',
   setLang: () => {},
-  toggleLang: () => {},
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -21,7 +19,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('pgp_lang') as Language;
-    if (saved === 'id' || saved === 'en') {
+    if (saved === 'id' || saved === 'en' || saved === 'ko') {
       setLangState(saved);
     }
   }, []);
@@ -31,13 +29,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('pgp_lang', newLang);
   };
 
-  const toggleLang = () => {
-    const nextLang = lang === 'id' ? 'en' : 'id';
-    setLang(nextLang);
-  };
-
   return (
-    <LanguageContext.Provider value={{ lang, setLang, toggleLang }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   );

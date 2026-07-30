@@ -97,11 +97,11 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl bg-black p-8 rounded-2xl border border-white/10">
-      {error && <div className="p-4 bg-red-950 text-red-400 rounded-lg text-sm">{error}</div>}
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl bg-white p-8 rounded-3xl border border-[#607D94]/20 shadow-xl shadow-[#1A7B9B]/5 text-[#102B3F]">
+      {error && <div className="p-4 bg-red-50 text-red-600 border border-red-200 rounded-xl text-sm">{error}</div>}
       
       <div>
-        <label className="block text-xs uppercase font-semibold tracking-wider text-white/60 mb-2">
+        <label className="block text-xs uppercase font-semibold tracking-wider text-[#102B3F] mb-2">
           Project Title *
         </label>
         <input 
@@ -110,14 +110,14 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
           value={formData.title}
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
           placeholder="contoh: 2025 Together for the Environment Concert"
-          className="w-full bg-zinc-950 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors"
+          className="w-full bg-[#F4F9FC] border border-[#607D94]/25 rounded-xl px-4 py-3 text-[#102B3F] placeholder-[#607D94]/50 focus:outline-none focus:border-[#3BBBE2] focus:ring-1 focus:ring-[#3BBBE2] transition-colors"
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <div className="flex items-center justify-between mb-2">
-            <label className="block text-xs uppercase font-semibold tracking-wider text-white/60">
+            <label className="block text-xs uppercase font-semibold tracking-wider text-[#102B3F]">
               Sub-Section / Tagging Master *
             </label>
           </div>
@@ -128,7 +128,7 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
             value={formData.category}
             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
             placeholder="Pilih chip atau ketik tag baru..."
-            className="w-full bg-zinc-950 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors mb-3"
+            className="w-full bg-[#F4F9FC] border border-[#607D94]/25 rounded-xl px-4 py-3 text-[#102B3F] placeholder-[#607D94]/50 focus:outline-none focus:border-[#3BBBE2] focus:ring-1 focus:ring-[#3BBBE2] transition-colors mb-3"
           />
 
           {/* Quick Suggestion Chips */}
@@ -138,10 +138,10 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
                 type="button"
                 key={sug}
                 onClick={() => setFormData({ ...formData, category: sug })}
-                className={`text-[10px] px-2.5 py-1 rounded-full border transition-all ${
+                className={`text-[10px] px-2.5 py-1 rounded-full border transition-all cursor-pointer ${
                   formData.category === sug
-                    ? 'bg-white text-black font-semibold border-white'
-                    : 'bg-white/5 text-white/60 border-white/10 hover:border-white/30 hover:text-white'
+                    ? 'bg-[#3BBBE2] text-white font-semibold border-[#3BBBE2]'
+                    : 'bg-[#F4F9FC] text-[#607D94] border-[#607D94]/20 hover:border-[#3BBBE2] hover:text-[#102B3F]'
                 }`}
               >
                 + {sug}
@@ -151,7 +151,7 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
         </div>
 
         <div>
-          <label className="block text-xs uppercase font-semibold tracking-wider text-white/60 mb-2">
+          <label className="block text-xs uppercase font-semibold tracking-wider text-[#102B3F] mb-2">
             Event Date *
           </label>
           <input 
@@ -159,17 +159,17 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
             type="date" 
             value={formData.eventDate}
             onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-            className="w-full bg-zinc-950 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors"
+            className="w-full bg-[#F4F9FC] border border-[#607D94]/25 rounded-xl px-4 py-3 text-[#102B3F] focus:outline-none focus:border-[#3BBBE2] focus:ring-1 focus:ring-[#3BBBE2] transition-colors"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs uppercase font-semibold tracking-wider text-white/60 mb-2">
+        <label className="block text-xs uppercase font-semibold tracking-wider text-[#102B3F] mb-2">
           Poster Image *
         </label>
         {formData.imageUrl && !file && (
-          <div className="mb-4 relative h-40 w-32 rounded-lg overflow-hidden border border-white/10 bg-zinc-950 p-1">
+          <div className="mb-4 relative h-40 w-32 rounded-xl overflow-hidden border border-[#607D94]/20 bg-[#F4F9FC] p-1">
             <Image src={formData.imageUrl} alt="Preview" fill sizes="256px" className="object-contain" />
           </div>
         )}
@@ -177,12 +177,12 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
           type="file" 
           accept="image/*"
           onChange={(e) => setFile(e.target.files?.[0] || null)}
-          className="w-full text-white/70 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-black hover:file:bg-white/90"
+          className="w-full text-[#607D94] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#3BBBE2]/10 file:text-[#1A7B9B] hover:file:bg-[#3BBBE2] hover:file:text-white cursor-pointer transition-all"
         />
       </div>
 
       <div>
-        <label className="block text-xs uppercase font-semibold tracking-wider text-white/60 mb-2">
+        <label className="block text-xs uppercase font-semibold tracking-wider text-[#102B3F] mb-2">
           Description (Optional)
         </label>
         <textarea 
@@ -190,15 +190,15 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           placeholder="Detail acara, lineup artis, venue..."
-          className="w-full bg-zinc-950 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors resize-none"
+          className="w-full bg-[#F4F9FC] border border-[#607D94]/25 rounded-xl px-4 py-3 text-[#102B3F] placeholder-[#607D94]/50 focus:outline-none focus:border-[#3BBBE2] focus:ring-1 focus:ring-[#3BBBE2] transition-colors resize-none"
         />
       </div>
 
-      <div className="pt-4 flex justify-end gap-3 border-t border-white/10">
+      <div className="pt-4 flex justify-end gap-3 border-t border-[#607D94]/15">
         <button 
           type="submit" 
           disabled={loading}
-          className="bg-white text-black px-8 py-3 rounded-xl font-medium hover:bg-white/90 transition-colors disabled:opacity-50"
+          className="bg-[#3BBBE2] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#1A7B9B] shadow-md shadow-[#3BBBE2]/20 transition-all disabled:opacity-50 cursor-pointer"
         >
           {loading ? 'Saving...' : 'Save Project'}
         </button>

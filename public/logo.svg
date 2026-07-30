@@ -1,4 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" fill="none">
-  <path d="M 200 40 C 100 40 20 120 20 220 C 20 320 100 400 200 400 C 300 400 380 320 380 220 C 380 140 325 75 250 50 L 250 110 C 290 130 320 170 320 220 C 320 286 266 340 200 340 C 134 340 80 286 80 220 C 80 154 134 100 200 100 C 255 100 300 135 315 185 L 170 185 C 150 185 140 195 140 215 C 140 235 150 245 170 245 L 260 245 C 260 300 215 320 170 320 C 110 320 80 270 80 220 C 80 170 120 130 170 130 C 190 130 200 120 200 100" fill="white" fill-rule="evenodd"/>
-  <text x="200" y="430" font-family="'Inter', 'Helvetica', 'Arial', sans-serif" font-size="32" font-weight="800" fill="white" text-anchor="middle" letter-spacing="1">PGP INT PASIFIC</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" fill="none">
+  <defs>
+    <linearGradient id="pgp-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3BBBE2" />
+      <stop offset="100%" stop-color="#1A7B9B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular G Emblem -->
+  <g transform="translate(10, 5)">
+    <circle cx="85" cy="85" r="80" fill="url(#pgp-logo-grad)" />
+    <!-- White G Inner Loop Cutout -->
+    <path fill="#FFFFFF" fill-rule="evenodd" d="
+      M 85 28
+      C 116.48 28 142 53.52 142 85
+      C 142 90.52 137.52 95 132 95
+      L 85 95
+      C 79.48 95 75 90.52 75 85
+      C 75 79.48 79.48 75 85 75
+      L 115 75
+      C 108.5 56 90.5 45 68 50
+      C 45.5 55 30 75 32 98
+      C 34 121 53 139 76 139
+      C 95 139 111 127 117 110
+      L 85 110
+      C 79.48 110 75 105.52 75 100
+      C 75 94.48 79.48 90 85 90
+      L 138 90
+      C 140 102 136 116 125 128
+      C 110 144 88 152 65 148
+      C 37 143 16 119 15 90
+      C 14 61 33 35 61 29
+      C 69 27.3 77 28 85 28
+      Z
+    "/>
+  </g>
+
+  <!-- PGP Text -->
+  <text x="205" y="110" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="108" font-weight="900" fill="#102B3F" letter-spacing="-1">PGP</text>
+
+  <!-- Subtitle "PLAYGROUND PLAYFUL" -->
+  <text x="205" y="152" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="27" font-weight="800" letter-spacing="0.5">
+    <tspan fill="#3BBBE2">“</tspan><tspan fill="#3BBBE2">P</tspan><tspan fill="#102B3F">LAY</tspan><tspan fill="#3BBBE2">G</tspan><tspan fill="#102B3F">ROUND </tspan><tspan fill="#3BBBE2">P</tspan><tspan fill="#102B3F">LAYFUL</tspan><tspan fill="#3BBBE2">”</tspan>
+  </text>
 </svg>

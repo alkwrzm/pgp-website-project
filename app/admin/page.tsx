@@ -1,8 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Pencil, AlertTriangle } from 'lucide-react';
-import DeleteButton from '@/components/DeleteButton';
+import { AlertTriangle } from 'lucide-react';
+import AdminProjectList from '@/components/AdminProjectList';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,7 +11,7 @@ export default async function AdminDashboard() {
 
   try {
     projects = await prisma.project.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: [{ order: 'asc' }, { eventDate: 'desc' }],
     });
   } catch (error) {
     console.error('Database initialization/connection error:', error);
@@ -20,17 +19,17 @@ export default async function AdminDashboard() {
   }
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-medium text-white mb-2">Projects</h1>
-          <p className="text-white/60">Kelola portfolio exhibition & event agency.</p>
+          <h1 className="text-3xl font-bold text-[#102B3F] mb-2">Projects</h1>
+          <p className="text-[#607D94]">Kelola & atur urutan tampilan poster portfolio (Drag & Drop).</p>
         </div>
         <Link 
           href="/admin/projects/new"
-          className="bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-white/90 transition-colors text-sm"
+          className="bg-[#3BBBE2] text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-[#1A7B9B] shadow-md shadow-[#3BBBE2]/20 transition-all text-sm flex items-center gap-1.5"
         >
-          Add New Project
+          <span>+ Add New Project</span>
         </Link>
       </div>
 
@@ -49,59 +48,7 @@ export default async function AdminDashboard() {
         </div>
       )}
 
-      <div className="bg-black border border-white/10 rounded-xl overflow-hidden shadow-xl">
-        <table className="w-full text-left text-sm text-white/70">
-          <thead className="bg-white/[0.02] text-white/50 text-xs uppercase border-b border-white/10">
-            <tr>
-              <th className="px-6 py-4 font-medium">Project</th>
-              <th className="px-6 py-4 font-medium">Category</th>
-              <th className="px-6 py-4 font-medium">Date</th>
-              <th className="px-6 py-4 font-medium text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-white/10">
-            {projects.length === 0 ? (
-              <tr>
-                <td colSpan={4} className="px-6 py-12 text-center text-white/40">
-                  {dbError ? 'Data tidak dapat dimuat karena database belum terhubung.' : 'Belum ada project yang diupload. Buat project pertama Anda.'}
-                </td>
-              </tr>
-            ) : (
-              projects.map((project) => (
-                <tr key={project.id} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-4">
-                      <div className="relative w-16 h-12 rounded overflow-hidden bg-white/10">
-                        <Image src={project.imageUrl} alt={project.title} fill sizes="64px" className="object-cover" />
-                      </div>
-                      <span className="font-medium text-white">{project.title}</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">{project.category}</td>
-                  <td className="px-6 py-4">
-                    {new Date(project.eventDate).toLocaleDateString()}
-                  </td>
-                  <td className="px-6 py-4 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <Link 
-                        href={`/admin/projects/${project.id}/edit`}
-                        className="p-2 text-white/50 hover:text-white hover:bg-white/10 rounded transition-colors"
-                        title="Edit Project"
-                      >
-                        <Pencil className="w-4 h-4" />
-                      </Link>
-                      <DeleteButton
-                        endpoint={`/api/projects/${project.id}`}
-                        itemTitle={project.title}
-                      />
-                    </div>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+      <AdminProjectList initialProjects={projects} />
     </div>
   );
 }

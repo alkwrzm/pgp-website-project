@@ -3,15 +3,22 @@
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-card: #111111;
-  --color-card-foreground: #ffffff;
-  --color-border: #333333;
-  --color-primary: #ffffff;
-  --color-primary-foreground: #000000;
-  --color-muted: #222222;
-  --color-muted-foreground: #a3a3a3;
+  --color-primary-accent: #3BBBE2;
+  --color-secondary-accent: #1A7B9B;
+  --color-dark-base: #102B3F;
+  --color-bg-light: #F4F9FC;
+  --color-card-surface: #FFFFFF;
+  --color-secondary-text: #607D94;
+
+  --color-background: #F4F9FC;
+  --color-foreground: #102B3F;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #102B3F;
+  --color-border: #E2E8F0;
+  --color-primary: #3BBBE2;
+  --color-primary-foreground: #FFFFFF;
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #607D94;
   
   --radius-lg: 0.5rem;
   --radius-md: 0.375rem;
@@ -20,15 +27,15 @@
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --card: #111111;
-    --card-foreground: #ffffff;
-    --border: #333333;
-    --primary: #ffffff;
-    --primary-foreground: #000000;
-    --muted: #222222;
-    --muted-foreground: #a3a3a3;
+    --background: #F4F9FC;
+    --foreground: #102B3F;
+    --card: #FFFFFF;
+    --card-foreground: #102B3F;
+    --border: #E2E8F0;
+    --primary: #3BBBE2;
+    --primary-foreground: #FFFFFF;
+    --muted: #F1F5F9;
+    --muted-foreground: #607D94;
   }
   html {
     scroll-behavior: smooth;
@@ -40,7 +47,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #F4F9FC;
+    color: #102B3F;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -48,9 +56,21 @@
 /* Custom Utilities for aesthetic */
 @layer utilities {
   .glass {
-    @apply bg-black/30 backdrop-blur-md border border-white/10;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(26, 123, 155, 0.15);
   }
   .hover-lift {
-    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5;
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1A7B9B]/10;
   }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 6s ease infinite;
 }

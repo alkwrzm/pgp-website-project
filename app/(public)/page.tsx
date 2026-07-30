@@ -16,7 +16,7 @@ export default async function Home() {
   try {
     await ensureServicesSeeded();
     const [fetchedProjects, fetchedServices] = await Promise.all([
-      prisma.project.findMany({ orderBy: { eventDate: 'desc' } }),
+      prisma.project.findMany({ orderBy: [{ order: 'asc' }, { eventDate: 'desc' }] }),
       prisma.service.findMany({ orderBy: { order: 'asc' } }),
     ]);
     projects = fetchedProjects;
@@ -31,16 +31,16 @@ export default async function Home() {
       {/* Hero Section (Bilingual ID / EN) */}
       <HeroSection />
 
-      {/* About Us / Company Profile (Bilingual ID / EN) */}
+      {/* About Us / Company Profile */}
       <CompanyProfileSection />
 
-      {/* Our Services Section (Bilingual ID / EN + Dynamic DB Data) */}
-      <ServicesSection dynamicServices={services} />
-
-      {/* Selected Portfolio Section (Bilingual ID / EN + Grouped Sub-sections) */}
+      {/* Selected Portfolio Section (Projects) */}
       <PortfolioSection projects={projects} dbError={dbError} />
 
-      {/* Contact Section (Bilingual ID / EN) */}
+      {/* Our Services Section */}
+      <ServicesSection dynamicServices={services} />
+
+      {/* Contact Section */}
       <ContactSection />
     </div>
   );

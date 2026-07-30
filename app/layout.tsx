@@ -10,6 +10,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "PGP INT PACIFIC | Design & Exhibition Agency",
   description: "Creative exhibition agency and event organizer. We design, build, and scale digital and physical experiences that make an impact.",
+  icons: {
+    icon: "/icon.jpg",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({
