@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { X, Calendar, Tag, Maximize2 } from 'lucide-react';
+import { useTheme } from '@/context/ThemeContext';
 
 interface ProjectCardProps {
   id: string;
@@ -15,6 +16,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, category, imageUrl, eventDate, description }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
 
   const formattedDate = eventDate
     ? new Date(eventDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -25,9 +28,15 @@ export default function ProjectCard({ title, category, imageUrl, eventDate, desc
       {/* Project Poster Card - Compact True Ratio Display */}
       <div 
         onClick={() => setIsOpen(true)}
-        className="group cursor-pointer flex flex-col bg-zinc-950/80 border border-white/10 rounded-2xl overflow-hidden hover-lift transition-all duration-300 hover:border-white/30"
+        className={`group cursor-pointer flex flex-col rounded-2xl overflow-hidden hover-lift transition-all duration-300 border ${
+          isLight 
+            ? 'bg-slate-50 border-slate-200 hover:border-slate-300 shadow-sm' 
+            : 'bg-zinc-950/80 border-white/10 hover:border-white/30'
+        }`}
       >
-        <div className="relative w-full h-[360px] md:h-[390px] bg-black/60 overflow-hidden flex items-center justify-center p-3">
+        <div className={`relative w-full h-[360px] md:h-[390px] overflow-hidden flex items-center justify-center p-3 ${
+          isLight ? 'bg-slate-100' : 'bg-black/60'
+        }`}>
           {/* Using object-contain with fixed card container height to keep true ratio without overflowing vertical screen */}
           <img
             src={imageUrl}
@@ -43,22 +52,34 @@ export default function ProjectCard({ title, category, imageUrl, eventDate, desc
           </div>
         </div>
         
-        <div className="p-4 flex flex-col gap-2 bg-gradient-to-b from-transparent to-black/80">
+        <div className={`p-4 flex flex-col gap-2 ${
+          isLight ? 'bg-white' : 'bg-gradient-to-b from-transparent to-black/80'
+        }`}>
           <div className="flex items-center justify-between gap-2 overflow-hidden">
-            <span className="text-[10px] font-semibold tracking-wider text-white/70 uppercase px-2.5 py-0.5 bg-white/10 rounded-full border border-white/10 truncate max-w-[60%]" title={category}>
+            <span className={`text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full border truncate max-w-[60%] ${
+              isLight 
+                ? 'bg-slate-100 text-slate-700 border-slate-200' 
+                : 'bg-white/10 text-white/70 border-white/10'
+            }`} title={category}>
               {category}
             </span>
             {formattedDate && (
-              <span className="text-[11px] text-white/40 font-mono flex-shrink-0">
+              <span className={`text-[11px] font-mono flex-shrink-0 ${
+                isLight ? 'text-slate-500' : 'text-white/40'
+              }`}>
                 {formattedDate}
               </span>
             )}
           </div>
-          <h3 className="text-base font-medium text-white group-hover:text-white/90 transition-colors mt-0.5 line-clamp-1">
+          <h3 className={`text-base font-medium transition-colors mt-0.5 line-clamp-1 ${
+            isLight ? 'text-slate-900 group-hover:text-slate-700' : 'text-white group-hover:text-white/90'
+          }`}>
             {title}
           </h3>
           {description && (
-            <p className="text-xs text-white/50 line-clamp-2 font-light leading-relaxed">
+            <p className={`text-xs line-clamp-2 font-light leading-relaxed ${
+              isLight ? 'text-slate-500' : 'text-white/50'
+            }`}>
               {description}
             </p>
           )}
@@ -87,7 +108,7 @@ export default function ProjectCard({ title, category, imageUrl, eventDate, desc
             </div>
 
             {/* Details section */}
-            <div className="md:w-2/5 p-6 flex flex-col justify-between overflow-y-auto bg-zinc-900/50 border-t md:border-t-0 md:border-l border-white/10">
+            <div className="md:w-2/5 p-6 flex flex-col justify-between overflow-y-auto bg-zinc-900/50 border-t md:border-t-0 md:border-l border-white/10 text-white">
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="px-3 py-1 bg-white/10 text-white/80 rounded-full text-xs uppercase font-medium tracking-wide flex items-center gap-1.5">

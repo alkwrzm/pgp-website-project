@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import ProjectCard from '@/components/ProjectCard';
 import { useLanguage } from '@/context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
 import { t } from '@/lib/translations';
 
 export interface ProjectItem {
@@ -23,7 +24,9 @@ export default function PortfolioSection({
 }) {
   const [activeTag, setActiveTag] = useState<string>('All');
   const { lang } = useLanguage();
+  const { theme } = useTheme();
   const text = t[lang].portfolio;
+  const isLight = theme === 'light';
 
   // Dynamically extract all unique categories / sub-section tags
   const tags = useMemo(() => {
@@ -51,15 +54,17 @@ export default function PortfolioSection({
   }, [projects, activeTag]);
 
   return (
-    <section id="portfolio" className="py-24 md:py-32 border-t border-white/10 bg-black">
+    <section id="portfolio" className={`py-24 md:py-32 border-t transition-colors duration-300 ${
+      isLight ? 'bg-white border-slate-200 text-slate-900' : 'bg-black border-white/10 text-white'
+    }`}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <p className="text-xs font-semibold tracking-widest text-white/50 uppercase mb-4">{text.badge}</p>
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-white">{text.title}</h2>
+            <p className={`text-xs font-semibold tracking-widest uppercase mb-4 ${isLight ? 'text-slate-500' : 'text-white/50'}`}>{text.badge}</p>
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight">{text.title}</h2>
           </div>
-          <p className="text-white/60 max-w-md text-base font-light">
+          <p className={`max-w-md text-base font-light ${isLight ? 'text-slate-600' : 'text-white/60'}`}>
             {text.desc}
           </p>
         </div>
@@ -73,8 +78,12 @@ export default function PortfolioSection({
                 onClick={() => setActiveTag(tag)}
                 className={`px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all whitespace-nowrap border ${
                   activeTag === tag
-                    ? 'bg-white text-black border-white shadow-lg shadow-white/10'
-                    : 'bg-white/5 text-white/70 border-white/10 hover:border-white/30 hover:text-white'
+                    ? isLight 
+                      ? 'bg-slate-900 text-white border-slate-900 shadow-md' 
+                      : 'bg-white text-black border-white shadow-lg shadow-white/10'
+                    : isLight 
+                      ? 'bg-slate-100 text-slate-700 border-slate-200 hover:border-slate-300' 
+                      : 'bg-white/5 text-white/70 border-white/10 hover:border-white/30 hover:text-white'
                 }`}
               >
                 {tag}
@@ -89,12 +98,12 @@ export default function PortfolioSection({
             {Object.entries(groupedProjects).map(([categoryName, items]) => (
               <div key={categoryName} className="space-y-6">
                 {/* Sub-section Header Badge */}
-                <div className="flex items-center gap-4 pb-2 border-b border-white/10">
-                  <div className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-white uppercase">
+                <div className={`flex items-center gap-4 pb-2 border-b ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
+                  <div className="h-2.5 w-2.5 rounded-full bg-amber-500" />
+                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight uppercase">
                     {categoryName}
                   </h3>
-                  <span className="text-xs font-mono text-white/40">({items.length} Event)</span>
+                  <span className={`text-xs font-mono ${isLight ? 'text-slate-400' : 'text-white/40'}`}>({items.length} Event)</span>
                 </div>
 
                 {/* Sub-section Poster Grid */}
@@ -115,8 +124,10 @@ export default function PortfolioSection({
             ))}
           </div>
         ) : (
-          <div className="py-24 text-center border border-white/10 rounded-2xl bg-white/[0.02]">
-            <p className="text-white/40 text-lg">
+          <div className={`py-24 text-center border rounded-2xl ${
+            isLight ? 'bg-slate-50 border-slate-200' : 'bg-white/[0.02] border-white/10'
+          }`}>
+            <p className={`text-lg ${isLight ? 'text-slate-400' : 'text-white/40'}`}>
               {dbError ? text.dbError : text.empty}
             </p>
           </div>
