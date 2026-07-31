@@ -144,6 +144,25 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
   const [showAllServices, setShowAllServices] = useState(false);
   const { lang } = useLanguage();
   const text = t[lang].services;
+  const serviceItems = (t[lang] as any).serviceItems || {};
+
+  const getServiceData = (service: Service) => {
+    const lower = service.title.toLowerCase();
+    let item: any = null;
+    if (lower.includes('pocketdrop')) item = serviceItems.pocketdrop;
+    else if (lower.includes('pic2go')) item = serviceItems.pic2go;
+    else if (lower.includes('konser') || lower.includes('concert')) item = serviceItems.concert;
+    else if (lower.includes('iklan') || lower.includes('model') || lower.includes('advertising')) item = serviceItems.agency;
+    else if (lower.includes('penghubung') || lower.includes('bridge') || lower.includes('perusahaan')) item = serviceItems.bridge;
+    else if (lower.includes('influencer')) item = serviceItems.influencer;
+
+    return {
+      category: item?.category || service.category,
+      title: item?.title || service.title,
+      subtitle: item?.subtitle || service.subtitle,
+      description: item?.description || service.description,
+    };
+  };
 
   // Helper to select icon based on title/category
   const getIcon = (title: string) => {
@@ -198,85 +217,91 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
 
         <div className="space-y-12">
           {/* FEATURED SERVICES WITH PHOTOS (Highlight Full-Width 1 Row Card) */}
-          {visibleFeatured.map((service) => (
-            <div
-              key={service.id}
-              className="rounded-3xl p-6 md:p-10 shadow-xl shadow-[#1A7B9B]/5 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-[#607D94]/20 bg-white hover:border-[#3BBBE2] hover:shadow-2xl transition-all duration-300"
-            >
-              {/* Subtle Ambient Glow */}
-              <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[#3BBBE2]/10" />
+          {visibleFeatured.map((service) => {
+            const sData = getServiceData(service);
+            return (
+              <div
+                key={service.id}
+                className="rounded-3xl p-6 md:p-10 shadow-xl shadow-[#1A7B9B]/5 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-[#607D94]/20 bg-white hover:border-[#3BBBE2] hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Subtle Ambient Glow */}
+                <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[#3BBBE2]/10" />
 
-              {/* Left Column: Service Details */}
-              <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-2xl border border-[#3BBBE2]/30 bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center shadow-inner">
-                      {getIcon(service.title)}
-                    </div>
-                    <span className="px-3 py-1 border border-[#1A7B9B]/20 bg-[#F4F9FC] rounded-full text-xs font-semibold uppercase tracking-wider text-[#1A7B9B]">
-                      {service.category}
-                    </span>
-                  </div>
-
-                  <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F]">
-                    {service.title}
-                  </h3>
-
-                  {service.subtitle && (
-                    <p className="text-sm font-mono mb-4 text-[#1A7B9B] font-medium">
-                      {service.subtitle}
-                    </p>
-                  )}
-
-                  {service.description && (
-                    <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94]">
-                      {service.description}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* Right Column: Featured Image Single 1-by-1 Auto Carousel */}
-              <div className="lg:col-span-6 w-full">
-                <ServiceCarousel
-                  title={service.title}
-                  images={service.images}
-                  previewTitle={text.previewTitle}
-                  imageUnit={text.imageUnit}
-                  onOpenLightbox={(idx) => setActiveGallery({ title: service.title, images: service.images, activeIdx: idx })}
-                />
-              </div>
-            </div>
-          ))}
-
-          {/* STANDARD SERVICES GRID (Services without photos) */}
-          {visibleStandard.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-              {visibleStandard.map((service) => (
-                <div
-                  key={service.id}
-                  className="border border-[#607D94]/20 bg-white p-8 rounded-2xl flex flex-col justify-between hover-lift transition-all duration-300 shadow-sm hover:border-[#3BBBE2]"
-                >
+                {/* Left Column: Service Details */}
+                <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6">
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center mb-6 border border-[#3BBBE2]/20">
-                      {getIcon(service.title)}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-2xl border border-[#3BBBE2]/30 bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center shadow-inner">
+                        {getIcon(service.title)}
+                      </div>
+                      <span className="px-3 py-1 border border-[#1A7B9B]/20 bg-[#F4F9FC] rounded-full text-xs font-semibold uppercase tracking-wider text-[#1A7B9B]">
+                        {sData.category}
+                      </span>
                     </div>
 
-                    <span className="text-[10px] font-mono uppercase tracking-widest block mb-2 text-[#1A7B9B] font-semibold">
-                      {service.category}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{service.title}</h3>
-                    {service.subtitle && (
-                      <p className="text-xs font-mono mb-4 text-[#607D94]">{service.subtitle}</p>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F]">
+                      {sData.title}
+                    </h3>
+
+                    {sData.subtitle && (
+                      <p className="text-sm font-mono mb-4 text-[#1A7B9B] font-medium">
+                        {sData.subtitle}
+                      </p>
                     )}
-                    {service.description && (
-                      <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94]">
-                        {service.description}
+
+                    {sData.description && (
+                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
+                        {sData.description}
                       </p>
                     )}
                   </div>
                 </div>
-              ))}
+
+                {/* Right Column: Featured Image Single 1-by-1 Auto Carousel */}
+                <div className="lg:col-span-6 w-full">
+                  <ServiceCarousel
+                    title={sData.title}
+                    images={service.images}
+                    previewTitle={text.previewTitle}
+                    imageUnit={text.imageUnit}
+                    onOpenLightbox={(idx) => setActiveGallery({ title: sData.title, images: service.images, activeIdx: idx })}
+                  />
+                </div>
+              </div>
+            );
+          })}
+
+          {/* STANDARD SERVICES GRID (Services without photos) */}
+          {visibleStandard.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+              {visibleStandard.map((service) => {
+                const sData = getServiceData(service);
+                return (
+                  <div
+                    key={service.id}
+                    className="border border-[#607D94]/20 bg-white p-8 rounded-2xl flex flex-col justify-between hover-lift transition-all duration-300 shadow-sm hover:border-[#3BBBE2]"
+                  >
+                    <div>
+                      <div className="w-12 h-12 rounded-xl bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center mb-6 border border-[#3BBBE2]/20">
+                        {getIcon(service.title)}
+                      </div>
+
+                      <span className="text-[10px] font-mono uppercase tracking-widest block mb-2 text-[#1A7B9B] font-semibold">
+                        {sData.category}
+                      </span>
+                      <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{sData.title}</h3>
+                      {sData.subtitle && (
+                        <p className="text-xs font-mono mb-4 text-[#607D94]">{sData.subtitle}</p>
+                      )}
+                      {sData.description && (
+                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
+                          {sData.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
 
