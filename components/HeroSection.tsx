@@ -152,10 +152,8 @@ export default function HeroSection() {
         }}
       >
         <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black tracking-tighter leading-none text-[#102B3F] transition-transform duration-300 hover:scale-[1.02]">
-          Playground{' '}
-          <span className="bg-gradient-to-r from-[#3BBBE2] via-[#1A7B9B] to-[#3BBBE2] bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent inline-block hover:rotate-1 transition-transform">
-            Playful
-          </span>
+          <span className="text-[#3BBBE2]">P</span>lay <span className="text-[#3BBBE2]">G</span>round{' '}
+          <span className="text-[#3BBBE2]">P</span>layful
         </h1>
       </div>
 
