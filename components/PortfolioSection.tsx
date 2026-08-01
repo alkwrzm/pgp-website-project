@@ -52,7 +52,11 @@ export default function PortfolioSection({
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#102B3F] mb-4">{text.title}</h2>
+<<<<<<< HEAD
           <p className="max-w-4xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify">
+=======
+          <p className="max-w-4xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify [word-break:keep-all]">
+>>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
             {text.desc}
           </p>
         </div>

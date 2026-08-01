@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext';
 import { t } from '@/lib/translations';
@@ -12,19 +12,37 @@ export default function ContactSection() {
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    const subject = encodeURIComponent(`[Website Inquiry] ${formData.name}`);
-    const body = encodeURIComponent(
-      `Nama / Perusahaan: ${formData.name}\nEmail: ${formData.email}\n\nPesan / Rencana Kolaborasi:\n${formData.message}`
-    );
+    setLoading(true);
+    setErrorMsg('');
 
-    // Open email client with pre-filled content to pgpintpacific@gmail.com
-    window.location.href = `mailto:pgpintpacific@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err: any) {
+      console.error(err);
+      setErrorMsg(err.message || 'Gagal mengirim pesan. Silakan coba lagi.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -82,6 +100,11 @@ export default function ContactSection() {
               </div>
             ) : (
               <form className="space-y-5" onSubmit={handleSubmit}>
+                {errorMsg && (
+                  <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs font-medium">
+                    {errorMsg}
+                  </div>
+                )}
                 <div>
                   <label className="block text-xs uppercase font-semibold tracking-wider mb-2 text-[#102B3F]">
                     {text.nameLabel} *
@@ -123,10 +146,15 @@ export default function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full font-semibold py-3.5 rounded-xl transition-all shadow-md shadow-[#3BBBE2]/25 bg-[#3BBBE2] text-white hover:bg-[#1A7B9B] transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={loading}
+                  className="w-full font-semibold py-3.5 rounded-xl transition-all shadow-md shadow-[#3BBBE2]/25 bg-[#3BBBE2] text-white hover:bg-[#1A7B9B] transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>{text.submitBtn}</span>
+                  {loading ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                  <span>{loading ? 'Sending...' : text.submitBtn}</span>
                 </button>
               </form>
             )}

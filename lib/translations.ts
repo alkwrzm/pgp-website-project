@@ -25,7 +25,11 @@ export const t = {
     },
     portfolio: {
       badge: '[ PROJECT PILIHAN ]',
+<<<<<<< HEAD
       title: 'Project Terbaru Kami di Korea',
+=======
+      title: 'Proyek Terbaru Kami di Korea',
+>>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
       desc: 'PT. PGP INT PACIFIC merupakan perusahaan yang didirikan oleh perusahaan Korea LIVECONNECT CO., LTD yang telah berhasil menyelenggarakan berbagai proyek berskala global. Melalui berbagai kegiatan, LIVECONNECT telah menghadirkan pengalaman yang berkesan bagi penggemar K-Pop di berbagai negara, seperti Korea Selatan, Jepang, Tiongkok, Amerika Serikat, dan lain-lain.',
       empty: 'Belum ada project yang diunggah. Tambahkan melalui CMS Admin.',
       dbError: 'Portfolio sedang disiapkan. Harap sambungkan database.',
@@ -46,9 +50,47 @@ export const t = {
       messageLabel: 'Pesan / Rencana Kolaborasi',
       messagePlaceholder: 'Jelaskan rencana kolaborasi atau bisnis Anda...',
       submitBtn: 'Kirim Inquiry',
-      successTitle: 'Inquiry Siap Dikirim!',
-      successDesc: 'Aplikasi email Anda telah dibuka dengan draf pesan otomatis ke pgpintpacific@gmail.com.',
+      successTitle: 'Inquiry Berhasil Terkirim!',
+      successDesc: 'Pesan Anda telah berhasil tercatat. Tim kami akan segera menghubungi Anda melalui email.',
       sendAnother: 'Kirim Pesan Lain',
+    },
+    serviceItems: {
+      pocketdrop: {
+        category: 'PHOTOCARD & MERCHANDISE',
+        title: 'PocketDrop (Aplikasi / Online)',
+        subtitle: 'Aplikasi koleksi photocard digital & reward',
+        description: 'PocketDrop merupakan platform koleksi photocard digital resmi yang menggunakan lisensi resmi K-pop Idol. Pengguna PocketDrop dapat mengumpulkan photocard digital, melengkapi satu set untuk mendapatkan photocard fisik, serta dapat membuka hadiah berupa video AI yang dipersonalisasi dari K-pop Idol itu sendiri.',
+      },
+      pic2go: {
+        category: 'PHOTOCARD & MERCHANDISE',
+        title: 'PIC2GO (Kiosk / Offline)',
+        subtitle: 'Mesin kiosk cetakan foto koleksi idol',
+        description: 'Layanan berupa mesin kiosk cetak foto otomatis yang memungkinkan penggemar membuat dan mencetak photo card fisik edisi khusus K-Pop secara langsung.',
+      },
+      concert: {
+        category: 'KONSER & FANMEETING',
+        title: 'Konser & Fanmeeting K-Pop',
+        subtitle: 'Penyelenggaraan event & fansign',
+        description: 'Penyelenggaraan dan promosi acara live bertaraf internasional seperti konser K-Pop, fanmeeting, dan fansign eksklusif untuk penggemar di Indonesia.',
+      },
+      agency: {
+        category: 'AGENSI IKLAN & MODEL',
+        title: 'Agensi Iklan / Model',
+        subtitle: 'Penghubung Brand Indonesia & Idol Korea',
+        description: 'Agensi periklanan yang menghubungkan merek-merek terkemuka di Indonesia dengan artis & Idol K-Pop ternama Korea sebagai bintang iklan dan ambassador.',
+      },
+      bridge: {
+        category: 'AGENSI PENGHUBUNG PERUSAHAAN',
+        title: 'Agensi Penghubung Perusahaan',
+        subtitle: 'Penghubung Brand Korea & Artis Indonesia',
+        description: 'Agensi penghubung strategis untuk brand Korea yang masuk ke pasar Indonesia dengan menggandeng selebriti dan artis ternama Indonesia.',
+      },
+      influencer: {
+        category: 'KERJASAMA INFLUENCER',
+        title: 'Kerjasama Influencer',
+        subtitle: 'Kemitraan Influencer Indonesia & Korea',
+        description: 'Kemitraan strategis dengan influencer top Indonesia dan Korea untuk kampanye pemasaran, promosi brand, serta perdagangan lintas negara.',
+      },
     },
     footer: {
       desc: 'PT PGP INT PACIFIC - Agensi Event & Penghubung Bisnis K-Pop, K-Drama & K-Beauty Terdepan di Indonesia.',
@@ -84,7 +126,11 @@ export const t = {
     },
     portfolio: {
       badge: '[ SELECTED PROJECTS ]',
+<<<<<<< HEAD
       title: 'Our Recent Project in Korea',
+=======
+      title: 'Our Recent Projects in Korea',
+>>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
       desc: 'PT. PGP INT PACIFIC is a company established by South Korean leader LIVECONNECT CO., LTD., which has successfully executed major global projects. Through various high-quality events, LIVECONNECT has brought memorable experiences to K-Pop fans across multiple countries, including South Korea, Japan, China, the United States, and beyond.',
       empty: 'No projects uploaded yet. Add them via CMS Admin.',
       dbError: 'Portfolio is being prepared. Please connect the database.',
@@ -105,9 +151,47 @@ export const t = {
       messageLabel: 'Message / Collaboration Plan',
       messagePlaceholder: 'Describe your collaboration or business plan...',
       submitBtn: 'Send Inquiry',
-      successTitle: 'Inquiry Ready to Send!',
-      successDesc: 'Your email application has been opened with an automated draft to pgpintpacific@gmail.com.',
+      successTitle: 'Inquiry Submitted Successfully!',
+      successDesc: 'Your message has been recorded. Our team will contact you shortly via email.',
       sendAnother: 'Send Another Message',
+    },
+    serviceItems: {
+      pocketdrop: {
+        category: 'PHOTOCARD & MERCHANDISE',
+        title: 'PocketDrop (Application / Online)',
+        subtitle: 'Digital photocard collection app & rewards',
+        description: 'PocketDrop is an official digital photocard collection platform licensed by official K-Pop Idols. PocketDrop users can collect digital photocards, complete a set to obtain physical photocards, and unlock personalized AI video rewards from K-Pop Idols.',
+      },
+      pic2go: {
+        category: 'PHOTOCARD & MERCHANDISE',
+        title: 'PIC2GO (Kiosk / Offline)',
+        subtitle: 'Idol photo collection kiosk machine',
+        description: 'Automated photo printing kiosk machine service allowing fans to create and print special edition physical K-Pop photocards on the spot.',
+      },
+      concert: {
+        category: 'CONCERTS & FANMEETINGS',
+        title: 'K-Pop Concerts & Fanmeetings',
+        subtitle: 'Event hosting & fansign organization',
+        description: 'Organizing and promoting high-profile international live events, including K-Pop concerts, fanmeetings, and exclusive fansigns for fans in Indonesia.',
+      },
+      agency: {
+        category: 'ADVERTISING & MODEL AGENCY',
+        title: 'Advertising & Model Agency',
+        subtitle: 'Connecting Indonesian Brands & Korean Idols',
+        description: 'Advertising agency connecting leading Indonesian brands with prominent South Korean K-Pop idols and stars as brand ambassadors and commercial models.',
+      },
+      bridge: {
+        category: 'CORPORATE LIAISON AGENCY',
+        title: 'Corporate Liaison Agency',
+        subtitle: 'Connecting Korean Brands & Indonesian Artists',
+        description: 'Strategic liaison agency connecting South Korean brands entering the Indonesian market with top Indonesian celebrities and artists.',
+      },
+      influencer: {
+        category: 'INFLUENCER PARTNERSHIP',
+        title: 'Influencer Collaboration',
+        subtitle: 'Indonesian & Korean Influencer Partnerships',
+        description: 'Strategic partnerships with top Indonesian & Korean influencers for marketing campaigns, brand promotion, and cross-border trade.',
+      },
     },
     footer: {
       desc: 'PT PGP INT PACIFIC - Premier K-Pop, K-Drama & K-Beauty Event Agency & Business Connector in Indonesia.',
@@ -144,7 +228,11 @@ export const t = {
     portfolio: {
       badge: '[ 주요 프로젝트 ]',
       title: '한국에서의 최근 프로젝트',
+<<<<<<< HEAD
       desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT CO., LTD 가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT는 글로벌 전시 프로젝트와 공연을 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K-Pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
+=======
+      desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT CO., LTD 가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT 는 글로벌 전시 프로젝트와 공연을 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K-pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
+>>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
       empty: '등록된 프로젝트가 없습니다. Admin CMS에서 추가해 주세요.',
       dbError: '포트폴리오 준비 중입니다. 데이터베이스를 연결해 주세요.',
       photoUnit: '장',
@@ -164,9 +252,47 @@ export const t = {
       messageLabel: '문의 내용 / 협력 제안',
       messagePlaceholder: '비즈니스 협력 제안 또는 문의 사항을 적어주세요...',
       submitBtn: '문의 제출하기',
-      successTitle: '문의 메일 작성 완료!',
-      successDesc: 'pgpintpacific@gmail.com으로 전송할 이메일 초안이 이메일 앱에서 열렸습니다.',
+      successTitle: '문의가 성공적으로 제출되었습니다!',
+      successDesc: '작성하신 내용이 접수되었습니다. 담당자가 확인 후 이메일로 연락 드리겠습니다.',
       sendAnother: '다른 문의 작성하기',
+    },
+    serviceItems: {
+      pocketdrop: {
+        category: '포토카드 & 굿즈',
+        title: 'PocketDrop (앱 / 온라인)',
+        subtitle: '디지털 포토카드 수집 앱 & 리워드',
+        description: 'PocketDrop은 K-Pop 아티스트의 공식 라이선스를 활용한 공식 디지털 포토카드 수집 플랫폼입니다. 이용자는 디지털 포토카드를 수집하고, 1세트를 완성하면 실물 포토카드를 획득할 수 있으며, K-Pop 아티스트의 맞춤형 AI 영상 리워드를 해금할 수 있습니다.',
+      },
+      pic2go: {
+        category: '포토카드 & 굿즈',
+        title: 'PIC2GO (키오스크 / 오프라인)',
+        subtitle: '아티스트 포토 출력 키오스크 머신',
+        description: '현장에서 팬들이 K-Pop 아티스트의 특별 에디션 실물 포토카드를 즉석에서 생성하고 출력할 수 있는 자동 사진 인쇄 키오스크 머신 서비스입니다.',
+      },
+      concert: {
+        category: '콘서트 & 팬미팅',
+        title: 'K-Pop 콘서트 & 팬미팅',
+        subtitle: '공연 기획 및 팬사인회 개최',
+        description: '인도네시아 팬들을 위한 K-Pop 콘서트, 팬미팅, 단독 팬사인회 등 최고 수준의 글로벌 라이브 이벤트를 기획 및 주최합니다.',
+      },
+      agency: {
+        category: '광고 & 모델 에이전시',
+        title: '광고 / 모델 에이전시',
+        subtitle: '인도네시아 브랜드 & 한국 아티스트 매칭',
+        description: '인도네시아 주요 브랜드와 한국의 유명 K-Pop 아이돌 및 아티스트를 광고 모델 및 브랜드 앰버서더로 연결하는 광고 에이전시 서비스입니다.',
+      },
+      bridge: {
+        category: '기업 연결 에이전시',
+        title: '기업 연결 에이전시',
+        subtitle: '한국 브랜드 & 인도네시아 아티스트 매칭',
+        description: '인도네시아 시장에 진출하는 한국 기업 및 브랜드에 인도네시아 탑 셀럽과 아티스트를 매칭해 주는 전략적 비즈니스 연결 에이전시입니다.',
+      },
+      influencer: {
+        category: '인플루언서 협업',
+        title: '인플루언서 컬래버레이션',
+        subtitle: '한국 & 인도네시아 인플루언서 파트너십',
+        description: '한국 및 인도네시아의 영향력 있는 인플루언서와 협력하여 브랜드 마케팅, 홍보, 국가 간 양방향 커머스를 추진하는 글로벌 파트너십입니다.',
+      },
     },
     footer: {
       desc: 'PT PGP INT PACIFIC - 인도네시아 최고의 K-Pop, K-Drama & K-Beauty 이벤트 에이전시 및 비즈니스 커넥터.',
