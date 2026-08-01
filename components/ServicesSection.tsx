@@ -306,11 +306,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
         <div className="space-y-12">
           {/* FEATURED SERVICES WITH PHOTOS (Highlight Full-Width 1 Row Card) */}
           {visibleFeatured.map((service) => {
-<<<<<<< HEAD
             const loc = getLocalizedServiceContent(service, lang);
-=======
-            const sData = getServiceData(service);
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
             return (
               <div
                 key={service.id}
@@ -327,16 +323,11 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                         {getIcon(service.title)}
                       </div>
                       <span className="px-3 py-1 border border-[#1A7B9B]/20 bg-[#F4F9FC] rounded-full text-xs font-semibold uppercase tracking-wider text-[#1A7B9B]">
-<<<<<<< HEAD
                         {loc.category || service.category}
-=======
-                        {sData.category}
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
                       </span>
                     </div>
 
                     <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F]">
-<<<<<<< HEAD
                       {loc.title}
                     </h3>
 
@@ -349,20 +340,6 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                     {loc.description && (
                       <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify">
                         {loc.description}
-=======
-                      {sData.title}
-                    </h3>
-
-                    {sData.subtitle && (
-                      <p className="text-sm font-mono mb-4 text-[#1A7B9B] font-medium">
-                        {sData.subtitle}
-                      </p>
-                    )}
-
-                    {sData.description && (
-                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
-                        {sData.description}
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
                       </p>
                     )}
                   </div>
@@ -371,19 +348,11 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                 {/* Right Column: Featured Image Single 1-by-1 Auto Carousel */}
                 <div className="lg:col-span-6 w-full">
                   <ServiceCarousel
-<<<<<<< HEAD
                     title={loc.title}
                     images={service.images}
                     previewTitle={text.previewTitle}
                     imageUnit={text.imageUnit}
                     onOpenLightbox={(idx) => setActiveGallery({ title: loc.title, images: service.images, activeIdx: idx })}
-=======
-                    title={sData.title}
-                    images={service.images}
-                    previewTitle={text.previewTitle}
-                    imageUnit={text.imageUnit}
-                    onOpenLightbox={(idx) => setActiveGallery({ title: sData.title, images: service.images, activeIdx: idx })}
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
                   />
                 </div>
               </div>
@@ -394,11 +363,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
           {visibleStandard.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
               {visibleStandard.map((service) => {
-<<<<<<< HEAD
                 const loc = getLocalizedServiceContent(service, lang);
-=======
-                const sData = getServiceData(service);
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
                 return (
                   <div
                     key={service.id}
@@ -410,7 +375,6 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                       </div>
 
                       <span className="text-[10px] font-mono uppercase tracking-widest block mb-2 text-[#1A7B9B] font-semibold">
-<<<<<<< HEAD
                         {loc.category || service.category}
                       </span>
                       <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{loc.title}</h3>
@@ -420,17 +384,6 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                       {loc.description && (
                         <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify">
                           {loc.description}
-=======
-                        {sData.category}
-                      </span>
-                      <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{sData.title}</h3>
-                      {sData.subtitle && (
-                        <p className="text-xs font-mono mb-4 text-[#607D94]">{sData.subtitle}</p>
-                      )}
-                      {sData.description && (
-                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
-                          {sData.description}
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
                         </p>
                       )}
                     </div>

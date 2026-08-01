@@ -25,11 +25,7 @@ export const t = {
     },
     portfolio: {
       badge: '[ PROJECT PILIHAN ]',
-<<<<<<< HEAD
       title: 'Project Terbaru Kami di Korea',
-=======
-      title: 'Proyek Terbaru Kami di Korea',
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
       desc: 'PT. PGP INT PACIFIC merupakan perusahaan yang didirikan oleh perusahaan Korea LIVECONNECT CO., LTD yang telah berhasil menyelenggarakan berbagai proyek berskala global. Melalui berbagai kegiatan, LIVECONNECT telah menghadirkan pengalaman yang berkesan bagi penggemar K-Pop di berbagai negara, seperti Korea Selatan, Jepang, Tiongkok, Amerika Serikat, dan lain-lain.',
       empty: 'Belum ada project yang diunggah. Tambahkan melalui CMS Admin.',
       dbError: 'Portfolio sedang disiapkan. Harap sambungkan database.',
@@ -126,11 +122,7 @@ export const t = {
     },
     portfolio: {
       badge: '[ SELECTED PROJECTS ]',
-<<<<<<< HEAD
       title: 'Our Recent Project in Korea',
-=======
-      title: 'Our Recent Projects in Korea',
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
       desc: 'PT. PGP INT PACIFIC is a company established by South Korean leader LIVECONNECT CO., LTD., which has successfully executed major global projects. Through various high-quality events, LIVECONNECT has brought memorable experiences to K-Pop fans across multiple countries, including South Korea, Japan, China, the United States, and beyond.',
       empty: 'No projects uploaded yet. Add them via CMS Admin.',
       dbError: 'Portfolio is being prepared. Please connect the database.',
@@ -228,11 +220,7 @@ export const t = {
     portfolio: {
       badge: '[ 주요 프로젝트 ]',
       title: '한국에서의 최근 프로젝트',
-<<<<<<< HEAD
       desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT CO., LTD 가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT는 글로벌 전시 프로젝트와 공연을 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K-Pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
-=======
-      desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT CO., LTD 가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT 는 글로벌 전시 프로젝트와 공연을 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K-pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
->>>>>>> 68f926f6d283a6559526be42b8b224b29e995c88
       empty: '등록된 프로젝트가 없습니다. Admin CMS에서 추가해 주세요.',
       dbError: '포트폴리오 준비 중입니다. 데이터베이스를 연결해 주세요.',
       photoUnit: '장',
