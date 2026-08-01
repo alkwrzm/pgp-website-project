@@ -14,6 +14,7 @@ interface Project {
   eventDate: string | Date;
   description: string | null;
   order: number;
+  isActive?: boolean;
 }
 
 export default function AdminProjectList({ initialProjects }: { initialProjects: Project[] }) {
@@ -22,6 +23,24 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
   const [dragOverIdx, setDragOverIdx] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+
+  const handleToggleActive = async (id: string, currentActive: boolean) => {
+    const nextActive = !currentActive;
+    // Optimistic UI update
+    setProjects(projects.map((p) => (p.id === id ? { ...p, isActive: nextActive } : p)));
+
+    try {
+      await fetch(`/api/projects/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isActive: nextActive }),
+      });
+    } catch (e) {
+      console.error('Failed to update status', e);
+      // Revert if error
+      setProjects(projects.map((p) => (p.id === id ? { ...p, isActive: currentActive } : p)));
+    }
+  };
 
   const handleDragStart = (idx: number) => {
     setDraggedIdx(idx);
@@ -52,21 +71,20 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
 
     // Save to server API
     setSaving(true);
+    setSaveSuccess(false);
+
     try {
-      const res = await fetch('/api/projects/reorder', {
+      await fetch('/api/projects/reorder', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          items: reordered.map((item, index) => ({ id: item.id, order: index })),
+          items: reordered.map((item) => ({ id: item.id, order: item.order })),
         }),
       });
-
-      if (res.ok) {
-        setSaveSuccess(true);
-        setTimeout(() => setSaveSuccess(false), 2000);
-      }
+      setSaveSuccess(true);
+      setTimeout(() => setSaveSuccess(false), 3000);
     } catch (err) {
-      console.error('Failed to save project order:', err);
+      console.error('Failed to save reorder', err);
     } finally {
       setSaving(false);
     }
@@ -113,6 +131,7 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
               <th className="px-4 py-4 font-semibold">Project</th>
               <th className="px-6 py-4 font-semibold">Category</th>
               <th className="px-6 py-4 font-semibold">Date</th>
+              <th className="px-6 py-4 font-semibold">Status</th>
               <th className="px-6 py-4 font-semibold text-right">Actions</th>
             </tr>
           </thead>
@@ -120,6 +139,7 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
             {projects.map((project, idx) => {
               const isDragging = draggedIdx === idx;
               const isDragOver = dragOverIdx === idx;
+              const active = project.isActive !== false;
 
               return (
                 <tr
@@ -159,6 +179,24 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
                   <td className="px-6 py-4 font-mono text-xs text-[#607D94]">
                     {new Date(project.eventDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
                   </td>
+                  <td className="px-6 py-4">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleToggleActive(project.id, active);
+                      }}
+                      className="flex items-center gap-2.5 group cursor-pointer select-none"
+                      title={active ? 'Klik untuk menyembunyikan dari website utama' : 'Klik untuk menampilkan di website utama'}
+                    >
+                      <div className={`w-11 h-6 flex items-center rounded-full p-1 transition-colors duration-300 shadow-inner ${active ? 'bg-[#3BBBE2]' : 'bg-slate-300'}`}>
+                        <div className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${active ? 'translate-x-5' : 'translate-x-0'}`} />
+                      </div>
+                      <span className={`text-xs font-bold transition-colors ${active ? 'text-[#102B3F]' : 'text-slate-400'}`}>
+                        {active ? 'Aktif' : 'Nonaktif'}
+                      </span>
+                    </button>
+                  </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>
                       <Link 
@@ -171,6 +209,7 @@ export default function AdminProjectList({ initialProjects }: { initialProjects:
                       <DeleteButton
                         endpoint={`/api/projects/${project.id}`}
                         itemTitle={project.title}
+                        onDeleted={() => setProjects(projects.filter((p) => p.id !== project.id))}
                       />
                     </div>
                   </td>

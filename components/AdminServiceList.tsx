@@ -16,12 +16,34 @@ interface Service {
   order: number;
 }
 
-export default function AdminServiceList({ initialServices }: { initialServices: Service[] }) {
-  const [services, setServices] = useState<Service[]>(initialServices);
+interface ServiceItem extends Service {
+  isActive?: boolean;
+}
+
+export default function AdminServiceList({ initialServices }: { initialServices: ServiceItem[] }) {
+  const [services, setServices] = useState<ServiceItem[]>(initialServices);
   const [draggedIdx, setDraggedIdx] = useState<number | null>(null);
   const [dragOverIdx, setDragOverIdx] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+
+  const handleToggleActive = async (id: string, currentActive: boolean) => {
+    const nextActive = !currentActive;
+    // Optimistic UI update
+    setServices(services.map((s) => (s.id === id ? { ...s, isActive: nextActive } : s)));
+
+    try {
+      await fetch(`/api/services/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isActive: nextActive }),
+      });
+    } catch (e) {
+      console.error('Failed to update service status', e);
+      // Revert on error
+      setServices(services.map((s) => (s.id === id ? { ...s, isActive: currentActive } : s)));
+    }
+  };
 
   const handleDragStart = (idx: number) => {
     setDraggedIdx(idx);
@@ -52,6 +74,8 @@ export default function AdminServiceList({ initialServices }: { initialServices:
 
     // Save to server API
     setSaving(true);
+    setSaveSuccess(false);
+
     try {
       const res = await fetch('/api/services/reorder', {
         method: 'PUT',
@@ -113,6 +137,7 @@ export default function AdminServiceList({ initialServices }: { initialServices:
               <th className="px-4 py-4 font-semibold">Service / Product</th>
               <th className="px-6 py-4 font-semibold">Kategori</th>
               <th className="px-6 py-4 font-semibold">Jumlah Foto</th>
+              <th className="px-6 py-4 font-semibold">Status</th>
               <th className="px-6 py-4 font-semibold text-right">Aksi</th>
             </tr>
           </thead>
@@ -120,6 +145,7 @@ export default function AdminServiceList({ initialServices }: { initialServices:
             {services.map((service, idx) => {
               const isDragging = draggedIdx === idx;
               const isDragOver = dragOverIdx === idx;
+              const active = service.isActive !== false;
 
               return (
                 <tr
@@ -166,6 +192,24 @@ export default function AdminServiceList({ initialServices }: { initialServices:
                   <td className="px-6 py-4 font-mono text-xs text-[#607D94]">
                     {service.images?.length || 0} Foto/UI
                   </td>
+                  <td className="px-6 py-4">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleToggleActive(service.id, active);
+                      }}
+                      className="flex items-center gap-2.5 group cursor-pointer select-none"
+                      title={active ? 'Klik untuk menyembunyikan dari website utama' : 'Klik untuk menampilkan di website utama'}
+                    >
+                      <div className={`w-11 h-6 flex items-center rounded-full p-1 transition-colors duration-300 shadow-inner ${active ? 'bg-[#3BBBE2]' : 'bg-slate-300'}`}>
+                        <div className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${active ? 'translate-x-5' : 'translate-x-0'}`} />
+                      </div>
+                      <span className={`text-xs font-bold transition-colors ${active ? 'text-[#102B3F]' : 'text-slate-400'}`}>
+                        {active ? 'Aktif' : 'Nonaktif'}
+                      </span>
+                    </button>
+                  </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>
                       <Link 
@@ -178,6 +222,7 @@ export default function AdminServiceList({ initialServices }: { initialServices:
                       <DeleteButton
                         endpoint={`/api/services/${service.id}`}
                         itemTitle={service.title}
+                        onDeleted={() => setServices(services.filter((s) => s.id !== service.id))}
                       />
                     </div>
                   </td>

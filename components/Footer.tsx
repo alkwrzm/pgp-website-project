@@ -8,6 +8,45 @@ import { t } from '@/lib/translations';
 export default function Footer() {
   const { lang } = useLanguage();
   const text = t[lang].footer;
+  const navText = t[lang].nav;
+  const portfolioText = t[lang].portfolio;
+
+  const serviceLinks = lang === 'ko' ? [
+    { label: 'PocketDrop (앱 / 온라인)', href: '/#services' },
+    { label: 'PIC2GO (키오스크 / 오프라인)', href: '/#services' },
+    { label: 'K-Pop 콘서트와 팬미팅', href: '/#services' },
+    { label: '광고 및 모델 에이전시', href: '/#services' },
+    { label: '기업 파트너십 에이전시', href: '/#services' },
+    { label: '인플루언서 콜라보레이션', href: '/#services' },
+  ] : lang === 'en' ? [
+    { label: 'PocketDrop (Application / Online)', href: '/#services' },
+    { label: 'PIC2GO (Kiosk / Offline)', href: '/#services' },
+    { label: 'K-Pop Concert & Fanmeeting', href: '/#services' },
+    { label: 'Advertising/Talent Agency', href: '/#services' },
+    { label: 'Business Partnership Agency', href: '/#services' },
+    { label: 'Collaboration with Influencer', href: '/#services' },
+  ] : [
+    { label: 'PocketDrop (Aplikasi / Online)', href: '/#services' },
+    { label: 'PIC2GO (Kiosk / Offline)', href: '/#services' },
+    { label: 'Konser dan Fanmeeting K-Pop', href: '/#services' },
+    { label: 'Agensi Iklan/Model', href: '/#services' },
+    { label: 'Agensi Penghubung Perusahaan', href: '/#services' },
+    { label: 'Kerjasama Influencer', href: '/#services' },
+  ];
+
+  const companyLinks = lang === 'ko' ? [
+    { label: '회사 소개', href: '/#about' },
+    { label: '포토폴리오', href: '/#portfolio' },
+    { label: '문의하기', href: '/#contact' },
+  ] : lang === 'en' ? [
+    { label: 'About Us', href: '/#about' },
+    { label: 'Portfolio', href: '/#portfolio' },
+    { label: 'Contact Us', href: '/#contact' },
+  ] : [
+    { label: 'Tentang Kami', href: '/#about' },
+    { label: 'Portfolio', href: '/#portfolio' },
+    { label: 'Hubungi Kami', href: '/#contact' },
+  ];
 
   return (
     <footer className="w-full border-t border-[#3BBBE2]/20 py-12 md:py-24 bg-[#102B3F] text-white transition-colors duration-300">
@@ -27,20 +66,23 @@ export default function Footer() {
         
         <div>
           <h4 className="font-semibold mb-4 sm:mb-6 tracking-wide text-xs uppercase font-mono text-[#3BBBE2]">{text.services}</h4>
-          <ul className="space-y-3 text-sm font-normal text-slate-300">
-            <li><Link href="/#services" className="hover:text-[#3BBBE2] transition-colors">PocketDrop (Aplikasi)</Link></li>
-            <li><Link href="/#services" className="hover:text-[#3BBBE2] transition-colors">PIC2GO (Kiosk Photo)</Link></li>
-            <li><Link href="/#services" className="hover:text-[#3BBBE2] transition-colors">Konser & Fanmeeting K-Pop</Link></li>
-            <li><Link href="/#services" className="hover:text-[#3BBBE2] transition-colors">Agensi Iklan & Influencer</Link></li>
+          <ul className="space-y-2.5 text-sm font-normal text-slate-300">
+            {serviceLinks.map((link, idx) => (
+              <li key={idx}>
+                <Link href={link.href} className="hover:text-[#3BBBE2] transition-colors">{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         
         <div>
           <h4 className="font-semibold mb-4 sm:mb-6 tracking-wide text-xs uppercase font-mono text-[#3BBBE2]">{text.company}</h4>
-          <ul className="space-y-3 text-sm font-normal text-slate-300">
-            <li><Link href="/#about" className="hover:text-[#3BBBE2] transition-colors">About Us</Link></li>
-            <li><Link href="/#portfolio" className="hover:text-[#3BBBE2] transition-colors">Selected Portfolio</Link></li>
-            <li><Link href="/#contact" className="hover:text-[#3BBBE2] transition-colors">Contact Us</Link></li>
+          <ul className="space-y-2.5 text-sm font-normal text-slate-300">
+            {companyLinks.map((link, idx) => (
+              <li key={idx}>
+                <Link href={link.href} className="hover:text-[#3BBBE2] transition-colors">{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

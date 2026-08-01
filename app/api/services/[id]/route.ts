@@ -14,7 +14,7 @@ export async function PUT(
 
     const { id } = await params;
     const body = await request.json();
-    const { title, subtitle, category, description, images, order } = body;
+    const { title, subtitle, category, description, images, order, isActive } = body;
 
     const service = await prisma.service.update({
       where: { id },
@@ -25,12 +25,38 @@ export async function PUT(
         description,
         images: Array.isArray(images) ? images : [],
         ...(typeof order === 'number' && { order }),
+        ...(typeof isActive === 'boolean' && { isActive }),
       },
     });
 
     return NextResponse.json(service);
   } catch (error) {
     console.error('Failed to update service:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
+}
+
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const isAuth = await verifyAuth(request);
+    if (!isAuth) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const { id } = await params;
+    const body = await request.json();
+
+    const service = await prisma.service.update({
+      where: { id },
+      data: body,
+    });
+
+    return NextResponse.json(service);
+  } catch (error) {
+    console.error('Failed to patch service:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

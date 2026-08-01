@@ -139,6 +139,94 @@ function ServiceCarousel({
   );
 }
 
+function getLocalizedServiceContent(service: Service, lang: string) {
+  const titleLower = service.title.toLowerCase();
+
+  if (titleLower.includes('pocketdrop')) {
+    return {
+      title: lang === 'ko' ? 'PocketDrop (앱 / 온라인)' : lang === 'en' ? 'PocketDrop (Application / Online)' : service.title,
+      subtitle: lang === 'ko' ? '디지털 포토카드 수집 및 리워드 앱' : lang === 'en' ? 'Digital photocard collection & reward app' : (service.subtitle || ''),
+      category: lang === 'ko' ? '포토카드 & 굿즈' : 'Photocard & Merchandise',
+      description: lang === 'ko' 
+        ? 'PocketDrop은 공식 라이선스를 보유한 K-Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K-Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
+        : lang === 'en'
+        ? 'PocketDrop is a digital photocard collection platform featuring officially licensed K-Pop artists. Users can collect digital photocards, complete full sets to redeem exclusive, previously unreleased physical photocards, and receive personalized AI-generated video messages from their favorite K-Pop artist.'
+        : 'PocketDrop adalah platform untuk mengoleksi photocard digital berlisensi resmi dari artis K-Pop. Pengguna dapat mengoleksi photocard digital, melengkapi set untuk mendapatkan photocard fisik edisi terbatas yang belum pernah dirilis, serta menerima pesan video AI yang dipersonalisasi dari artis K-Pop favorit mereka.',
+    };
+  }
+
+  if (titleLower.includes('pic2go')) {
+    return {
+      title: lang === 'ko' ? 'PIC2GO (키오스크 / 오프라인)' : lang === 'en' ? 'PIC2GO (Kiosk / Offline)' : service.title,
+      subtitle: lang === 'ko' ? '아이돌 포토 컬렉션 출력 키오스크 기기' : lang === 'en' ? 'Idol photo collection printing kiosk machine' : (service.subtitle || ''),
+      category: lang === 'ko' ? '아이돌 포토 & 굿즈' : 'Idol Photo & Merchandise',
+      description: lang === 'ko'
+        ? 'PIC2GO는 K-Pop 아이돌의 공식 라이선스 미공개 사진을 즉시 출력할 수 있는 키오스크 서비스입니다. PIC2GO에서만 만나볼 수 있는 독점적인 미공개 사진 컬렉션을 통해 팬들에게 더욱 특별한 경험을 제공합니다. 사용자는 원하는 아티스트 이름이나 사진을 검색한 후, 마음에 드는 사진을 선택하여 키오스크에서 바로 출력할 수 있습니다. 빠르고 간편하며 즐거운 이용 과정을 통해 PIC2GO는 K-Pop 아이돌 사진을 더욱 특별하게 소장할 수 있는 개인화된 경험을 제공하며, PIC2GO에서만 얻을 수 있는 독점적인 기념품을 즉시 가져갈 수 있습니다.'
+        : lang === 'en'
+        ? 'PIC2GO is a kiosk service that allows fans to instantly print officially licensed unreleased K-Pop Idol photos. Featuring an exclusive collection available only at PIC2GO, the service gives fans access to premium photos that cannot be found anywhere else. Users simply search for their favorite artist or desired image, select their preferred photo, and print it instantly. With a fast, convenient, and enjoyable experience, PIC2GO offers a more personalized way to collect K-Pop Idol photos while taking home exclusive keepsakes available only through PIC2GO.'
+        : 'PIC2GO merupakan layanan kiosk yang dapat langsung mencetak foto K-Pop Idol secara instan. PIC2GO menyediakan koleksi foto eksklusif yang belum pernah dipublikasikan kepada publik yang diperoleh melalui lisensi resmi. Pengguna hanya perlu mencari nama artis atau gambar yang diinginkan, memilih foto favorit, kemudian langsung mencetaknya melalui kiosk. Dengan proses yang cepat, mudah, dan menyenangkan, PIC2GO menghadirkan pengalaman yang lebih personal dalam mengoleksi foto K-Pop Idol serta memberikan kenang-kenangan eksklusif yang dapat langsung dibawa pulang.',
+    };
+  }
+
+  if (titleLower.includes('konser') || titleLower.includes('concert') || titleLower.includes('fanmeeting')) {
+    return {
+      title: lang === 'ko' ? 'K-Pop 콘서트와 팬미팅' : lang === 'en' ? 'K-Pop Concert & Fanmeeting' : 'Konser dan Fanmeeting K-Pop',
+      subtitle: lang === 'ko' ? '이벤트 주최 및 팬사인회 기획' : lang === 'en' ? 'Event hosting & fansign organization' : (service.subtitle || ''),
+      category: lang === 'ko' ? '콘서트 & 팬미팅' : lang === 'en' ? 'Concert & Fanmeeting' : 'Konser & Fanmeeting',
+      description: lang === 'ko'
+        ? '인도네시아에서 K-Pop 아이돌들과 K-Drama 배우들의 콘서트 및 팬미팅 그리고 팬싸인회를 통해서 팬들에게 더 큰 즐거움과 기쁨을 드리도록 하겠으며 콘서트 현장과 팬미팅 현장에서 아이돌그리고 배우의 MD 판매와 K-Food 판매도 진행하도록 하겠습니다.'
+        : lang === 'en'
+        ? 'In Indonesia, through concerts, fanmeetings, and fan signing events featuring K-Pop Idol and K-Drama actors, we will provide fans with greater enjoyment and happiness. Through these events, we will also provide official merchandise (MD) from artists and actors, along with K-Food offerings at concert and fan meeting venues'
+        : 'Di Indonesia, melalui konser, fanmeeting, dan fan signing bersama K-Pop Idol serta aktor K-drama, kami berupaya untuk memberikan kesenangan dan kebahagiaan yang lebih besar para penggemar. Di lokasi konser dan lokasi fanmeeting, kami juga akan melakukan penjualan merchandise dari idol dan aktor, serta penjualan K-Food.',
+    };
+  }
+
+  if (titleLower.includes('iklan') || titleLower.includes('advertising') || titleLower.includes('model') || titleLower.includes('talent')) {
+    return {
+      title: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising/Talent Agency' : 'Agensi Iklan/Model',
+      subtitle: lang === 'ko' ? '인도네시아 브랜드 & 한국 아티스트 매칭' : lang === 'en' ? 'Connecting Indonesian Brands & Korean Idols' : (service.subtitle || ''),
+      category: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising/Talent Agency' : 'Agensi Iklan/Model',
+      description: lang === 'ko'
+        ? '인도네시아에 진출하는 한국 기업과 인도네시아 아티스트를 광고모델 또는 제품모델로연결해 드릴것이며 한국의 상품이 인도네시아 마케팅 하는것에 대해 크게 도움드릴 수 있도록 하겠습니다.'
+        : lang === 'en'
+        ? 'We will connect Korean K-pop idols and actors as advertising models or product ambassadors for products manufactured in Indonesia. For artists selected as product models, we will produce exclusive photocards and plan promotional events where these photocards will be distributed as special gifts with product purchases.'
+        : 'Kami akan menghubungkan penyanyi idol Korea dan aktor Korea sebagai model iklan atau model produk untuk produk-produk yang diproduksi di Indonesia. Untuk artis yang telah dipilih sebagai model produk, kami akan membuat photocard eksklusif dan juga merencanakan pemberian photocard sebagai hadiah dengan pembelian produk.',
+    };
+  }
+
+  if (titleLower.includes('penghubung perusahaan') || titleLower.includes('connector') || titleLower.includes('business partnership')) {
+    return {
+      title: lang === 'ko' ? '기업 파트너십 에이전시' : lang === 'en' ? 'Business Partnership Agency' : 'Agensi Penghubung Perusahaan',
+      subtitle: lang === 'ko' ? '한국 브랜드 & 인도네시아 아티스트 매칭' : lang === 'en' ? 'Connecting Korean Brands & Indonesian Artists' : (service.subtitle || ''),
+      category: lang === 'ko' ? '기업 파트너십 에이전시' : lang === 'en' ? 'Business Partnership Agency' : 'Agensi Penghubung Perusahaan',
+      description: lang === 'ko'
+        ? '인도네시아에서 생산되는 상품의 광고모델 또는 제품모델로 한국 아이돌 가수 및 한국배우들을 연결해드릴것이며 상품 모델로 결정된 아티스트의 포토카드를 제작하여 상품판매시 포토카드를 증정하는 행사도 계획하도록 하겠습니다.'
+        : lang === 'en'
+        ? 'We connect Korean companies entering the Indonesian market with Indonesian artists as advertising models and brand ambassadors, helping them develop effective marketing strategies and enhance brand awareness in Indonesia. Through strategic collaborations, we support Korean brands in successfully promoting their products and expanding their presence in the Indonesian market.'
+        : 'Kami menghubungkan perusahaan Korea yang ingin memasuki pasar Indonesia dengan artis Indonesia sebagai model iklan dan brand ambassador, untuk membantu membangun strategi pemasaran yang lebih kuat serta meningkatkan kesadaran merek di Indonesia. Melalui kolaborasi strategis, kami bertujuan mendukung brand Korea dalam mempromosikan produk mereka dan memperluas kehadirannya di pasar Indonesia.',
+    };
+  }
+
+  if (titleLower.includes('influencer')) {
+    return {
+      title: lang === 'ko' ? '인플루언서 콜라보레이션' : lang === 'en' ? 'Collaboration with Influencer' : 'Kerjasama Influencer',
+      subtitle: lang === 'ko' ? '인도네시아 & 한국 인플루언서 제휴' : lang === 'en' ? 'Indonesian & Korean Influencer Alliances' : (service.subtitle || ''),
+      category: lang === 'ko' ? '인플루언서 콜라보레이션' : lang === 'en' ? 'Collaboration with Influencer' : 'Kerjasama Influencer',
+      description: lang === 'ko'
+        ? '인도네시아 인플루언서와 파트너쉽을 맺고 한국 상품 및 인도네시아 상품 마케팅과 판매에 도움드릴수 있도록 할것이며 한국 인플루언서의 인도네시아 활동에 대해 도움드릴수 있도록 하겠으며 인도네시아 상품이 한국에서 많이 팔릴수 있도록 한국 인플루언서들과 협업하도록 하겠습니다.'
+        : lang === 'en'
+        ? 'We will establish partnerships with Indonesian influencers to support the marketing and sales of both Korean and Indonesian products. We will also provide support for Korean influencers activities in Indonesia and collaborate with Korean influencers to help Indonesian products gain greater recognition and achieve stronger sales opportunities in the Korean market.'
+        : 'Kami akan menjalin kemitraan dengan influencer Indonesia untuk membantu pemasaran dan penjualan produk Korea maupun produk Indonesia. Kami juga akan membantu aktivitas influencer Korea di Indonesia, serta bekerja sama dengan influencer Korea agar produk-produk Indonesia dapat lebih dikenal dan memiliki peluang penjualan yang lebih besar di pasar Korea.',
+    };
+  }
+
+  return {
+    title: service.title,
+    subtitle: service.subtitle || '',
+    description: service.description || '',
+  };
+}
+
 export default function ServicesSection({ dynamicServices }: { dynamicServices: Service[] }) {
   const [activeGallery, setActiveGallery] = useState<{ title: string; images: string[]; activeIdx: number } | null>(null);
   const [showAllServices, setShowAllServices] = useState(false);
@@ -191,92 +279,98 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#102B3F]">{text.title}</h2>
-          <p className="max-w-3xl text-base md:text-lg font-normal leading-relaxed text-[#607D94]">
+          <p className="max-w-3xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify">
             {text.desc}
           </p>
         </div>
 
         <div className="space-y-12">
           {/* FEATURED SERVICES WITH PHOTOS (Highlight Full-Width 1 Row Card) */}
-          {visibleFeatured.map((service) => (
-            <div
-              key={service.id}
-              className="rounded-3xl p-6 md:p-10 shadow-xl shadow-[#1A7B9B]/5 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-[#607D94]/20 bg-white hover:border-[#3BBBE2] hover:shadow-2xl transition-all duration-300"
-            >
-              {/* Subtle Ambient Glow */}
-              <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[#3BBBE2]/10" />
+          {visibleFeatured.map((service) => {
+            const loc = getLocalizedServiceContent(service, lang);
+            return (
+              <div
+                key={service.id}
+                className="rounded-3xl p-6 md:p-10 shadow-xl shadow-[#1A7B9B]/5 relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-[#607D94]/20 bg-white hover:border-[#3BBBE2] hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Subtle Ambient Glow */}
+                <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[#3BBBE2]/10" />
 
-              {/* Left Column: Service Details */}
-              <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-2xl border border-[#3BBBE2]/30 bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center shadow-inner">
-                      {getIcon(service.title)}
-                    </div>
-                    <span className="px-3 py-1 border border-[#1A7B9B]/20 bg-[#F4F9FC] rounded-full text-xs font-semibold uppercase tracking-wider text-[#1A7B9B]">
-                      {service.category}
-                    </span>
-                  </div>
-
-                  <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F]">
-                    {service.title}
-                  </h3>
-
-                  {service.subtitle && (
-                    <p className="text-sm font-mono mb-4 text-[#1A7B9B] font-medium">
-                      {service.subtitle}
-                    </p>
-                  )}
-
-                  {service.description && (
-                    <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94]">
-                      {service.description}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* Right Column: Featured Image Single 1-by-1 Auto Carousel */}
-              <div className="lg:col-span-6 w-full">
-                <ServiceCarousel
-                  title={service.title}
-                  images={service.images}
-                  previewTitle={text.previewTitle}
-                  imageUnit={text.imageUnit}
-                  onOpenLightbox={(idx) => setActiveGallery({ title: service.title, images: service.images, activeIdx: idx })}
-                />
-              </div>
-            </div>
-          ))}
-
-          {/* STANDARD SERVICES GRID (Services without photos) */}
-          {visibleStandard.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-              {visibleStandard.map((service) => (
-                <div
-                  key={service.id}
-                  className="border border-[#607D94]/20 bg-white p-8 rounded-2xl flex flex-col justify-between hover-lift transition-all duration-300 shadow-sm hover:border-[#3BBBE2]"
-                >
+                {/* Left Column: Service Details */}
+                <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6">
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center mb-6 border border-[#3BBBE2]/20">
-                      {getIcon(service.title)}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-2xl border border-[#3BBBE2]/30 bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center shadow-inner">
+                        {getIcon(service.title)}
+                      </div>
+                      <span className="px-3 py-1 border border-[#1A7B9B]/20 bg-[#F4F9FC] rounded-full text-xs font-semibold uppercase tracking-wider text-[#1A7B9B]">
+                        {loc.category || service.category}
+                      </span>
                     </div>
 
-                    <span className="text-[10px] font-mono uppercase tracking-widest block mb-2 text-[#1A7B9B] font-semibold">
-                      {service.category}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{service.title}</h3>
-                    {service.subtitle && (
-                      <p className="text-xs font-mono mb-4 text-[#607D94]">{service.subtitle}</p>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F]">
+                      {loc.title}
+                    </h3>
+
+                    {loc.subtitle && (
+                      <p className="text-sm font-mono mb-4 text-[#1A7B9B] font-medium">
+                        {loc.subtitle}
+                      </p>
                     )}
-                    {service.description && (
-                      <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94]">
-                        {service.description}
+
+                    {loc.description && (
+                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify">
+                        {loc.description}
                       </p>
                     )}
                   </div>
                 </div>
-              ))}
+
+                {/* Right Column: Featured Image Single 1-by-1 Auto Carousel */}
+                <div className="lg:col-span-6 w-full">
+                  <ServiceCarousel
+                    title={loc.title}
+                    images={service.images}
+                    previewTitle={text.previewTitle}
+                    imageUnit={text.imageUnit}
+                    onOpenLightbox={(idx) => setActiveGallery({ title: loc.title, images: service.images, activeIdx: idx })}
+                  />
+                </div>
+              </div>
+            );
+          })}
+
+          {/* STANDARD SERVICES GRID (Services without photos) */}
+          {visibleStandard.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+              {visibleStandard.map((service) => {
+                const loc = getLocalizedServiceContent(service, lang);
+                return (
+                  <div
+                    key={service.id}
+                    className="border border-[#607D94]/20 bg-white p-8 rounded-2xl flex flex-col justify-between hover-lift transition-all duration-300 shadow-sm hover:border-[#3BBBE2]"
+                  >
+                    <div>
+                      <div className="w-12 h-12 rounded-xl bg-[#3BBBE2]/10 text-[#1A7B9B] flex items-center justify-center mb-6 border border-[#3BBBE2]/20">
+                        {getIcon(service.title)}
+                      </div>
+
+                      <span className="text-[10px] font-mono uppercase tracking-widest block mb-2 text-[#1A7B9B] font-semibold">
+                        {loc.category || service.category}
+                      </span>
+                      <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{loc.title}</h3>
+                      {loc.subtitle && (
+                        <p className="text-xs font-mono mb-4 text-[#607D94]">{loc.subtitle}</p>
+                      )}
+                      {loc.description && (
+                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify">
+                          {loc.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
 

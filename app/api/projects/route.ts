@@ -30,20 +30,25 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { title, category, imageUrl, eventDate, description } = body;
+    const { title, category, imageUrl, images, eventDate, description, isActive } = body;
 
-    if (!title || !category || !imageUrl || !eventDate) {
+    if (!title || !category || (!imageUrl && (!images || images.length === 0)) || !eventDate) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
+
+    const finalImages = Array.isArray(images) && images.length > 0 ? images : (imageUrl ? [imageUrl] : []);
+    const primaryImage = imageUrl || finalImages[0] || '';
 
     const project = await prisma.project.create({
       data: {
         title,
         category,
-        imageUrl,
+        imageUrl: primaryImage,
+        images: finalImages,
         eventDate: new Date(eventDate),
         description,
-      },
+        ...(typeof isActive === 'boolean' && { isActive }),
+      } as any,
     });
 
     return NextResponse.json(project, { status: 201 });

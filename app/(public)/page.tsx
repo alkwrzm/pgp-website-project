@@ -16,11 +16,15 @@ export default async function Home() {
   try {
     await ensureServicesSeeded();
     const [fetchedProjects, fetchedServices] = await Promise.all([
-      prisma.project.findMany({ orderBy: [{ order: 'asc' }, { eventDate: 'desc' }] as any }),
-      prisma.service.findMany({ orderBy: { order: 'asc' } as any }),
+      prisma.project.findMany({ 
+        orderBy: [{ order: 'asc' }, { eventDate: 'desc' }] as any 
+      }),
+      prisma.service.findMany({ 
+        orderBy: { order: 'asc' } as any 
+      }),
     ]);
-    projects = fetchedProjects;
-    services = fetchedServices;
+    projects = fetchedProjects.filter((p: any) => p.isActive !== false);
+    services = fetchedServices.filter((s: any) => s.isActive !== false);
   } catch (error) {
     console.error('Failed to fetch data for home page:', error);
     dbError = true;

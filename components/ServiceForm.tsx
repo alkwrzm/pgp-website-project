@@ -28,6 +28,7 @@ export default function ServiceForm({ initialData }: { initialData?: ServiceData
     description: initialData?.description || '',
     images: initialData?.images || [],
     order: initialData?.order ?? 0,
+    isActive: (initialData as any)?.isActive !== undefined ? (initialData as any).isActive : true,
   });
 
   // Handle uploading multiple image files to Supabase via /api/upload
@@ -211,6 +212,21 @@ export default function ServiceForm({ initialData }: { initialData?: ServiceData
             disabled={uploading}
             className="hidden"
           />
+        </label>
+      </div>
+
+      <div>
+        <label className="flex items-center gap-3 p-4 rounded-xl border border-[#607D94]/20 bg-[#F4F9FC] cursor-pointer hover:border-[#3BBBE2] transition-all">
+          <input
+            type="checkbox"
+            checked={formData.isActive}
+            onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
+            className="w-5 h-5 accent-[#3BBBE2] rounded cursor-pointer"
+          />
+          <div>
+            <span className="text-sm font-bold text-[#102B3F] block">Tampilkan di Website Utama (Status Aktif)</span>
+            <span className="text-xs text-[#607D94]">Jika dicentang, service/produk ini akan terlihat oleh pengunjung publik.</span>
+          </div>
         </label>
       </div>
 

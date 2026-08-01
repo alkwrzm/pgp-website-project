@@ -11,6 +11,7 @@ export interface ProjectItem {
   title: string;
   category: string;
   imageUrl: string;
+  images?: string[];
   eventDate: string | Date;
   description: string | null;
 }
@@ -26,8 +27,8 @@ export default function PortfolioSection({
   const { lang } = useLanguage();
   const text = t[lang].portfolio;
 
-  // Max 3 rows limit (4 items per row on desktop = 12 items)
-  const INITIAL_LIMIT = 12;
+  // Max 3 rows limit (3 items per row on desktop = 9 items)
+  const INITIAL_LIMIT = 9;
   const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_LIMIT);
   const hasMore = projects.length > INITIAL_LIMIT;
 
@@ -51,15 +52,15 @@ export default function PortfolioSection({
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#102B3F] mb-4">{text.title}</h2>
-          <p className="max-w-4xl text-base md:text-lg font-normal leading-relaxed text-[#607D94]">
+          <p className="max-w-4xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify">
             {text.desc}
           </p>
         </div>
 
-        {/* Poster Grid */}
+        {/* Poster Grid - 3 Items Per Row */}
         {projects.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
               {visibleProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
@@ -67,6 +68,7 @@ export default function PortfolioSection({
                   title={project.title}
                   category={project.category}
                   imageUrl={project.imageUrl}
+                  images={project.images}
                   eventDate={project.eventDate}
                   description={project.description}
                 />
