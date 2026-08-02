@@ -117,9 +117,8 @@ function ServiceCarousel({
                   e.stopPropagation();
                   setCurrentIdx(idx);
                 }}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIdx === idx ? 'w-6 bg-[#3BBBE2]' : 'w-2 bg-[#607D94]/30 hover:bg-[#607D94]/60'
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${currentIdx === idx ? 'w-6 bg-[#3BBBE2]' : 'w-2 bg-[#607D94]/30 hover:bg-[#607D94]/60'
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
@@ -147,11 +146,11 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       title: lang === 'ko' ? 'PocketDrop (앱 / 온라인)' : lang === 'en' ? 'PocketDrop (Application / Online)' : service.title,
       subtitle: lang === 'ko' ? '디지털 포토카드 수집 및 리워드 앱' : lang === 'en' ? 'Digital photocard collection & reward app' : (service.subtitle || ''),
       category: lang === 'ko' ? '포토카드 & 굿즈' : 'Photocard & Merchandise',
-      description: lang === 'ko' 
+      description: lang === 'ko'
         ? 'PocketDrop은 공식 라이선스를 보유한 K-Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K-Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
         : lang === 'en'
-        ? 'PocketDrop is a digital photocard collection platform featuring officially licensed K-Pop artists. Users can collect digital photocards, complete full sets to redeem exclusive, previously unreleased physical photocards, and receive personalized AI-generated video messages from their favorite K-Pop artist.'
-        : 'PocketDrop adalah platform untuk mengoleksi photocard digital berlisensi resmi dari artis K-Pop. Pengguna dapat mengoleksi photocard digital, melengkapi set untuk mendapatkan photocard fisik edisi terbatas yang belum pernah dirilis, serta menerima pesan video AI yang dipersonalisasi dari artis K-Pop favorit mereka.',
+          ? 'PocketDrop is a digital photocard collection platform featuring officially licensed K-Pop artists. Users can collect digital photocards, complete full sets to redeem exclusive, previously unreleased physical photocards, and receive personalized AI-generated video messages from their favorite K-Pop artist.'
+          : 'PocketDrop adalah platform untuk mengoleksi photocard digital berlisensi resmi dari artis K-Pop. Pengguna dapat mengoleksi photocard digital, melengkapi set untuk mendapatkan photocard fisik edisi terbatas yang belum pernah dirilis, serta menerima pesan video AI yang dipersonalisasi dari artis K-Pop favorit mereka.',
     };
   }
 
@@ -163,8 +162,8 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       description: lang === 'ko'
         ? 'PIC2GO는 K-Pop 아이돌의 공식 라이선스 미공개 사진을 즉시 출력할 수 있는 키오스크 서비스입니다. PIC2GO에서만 만나볼 수 있는 독점적인 미공개 사진 컬렉션을 통해 팬들에게 더욱 특별한 경험을 제공합니다. 사용자는 원하는 아티스트 이름이나 사진을 검색한 후, 마음에 드는 사진을 선택하여 키오스크에서 바로 출력할 수 있습니다. 빠르고 간편하며 즐거운 이용 과정을 통해 PIC2GO는 K-Pop 아이돌 사진을 더욱 특별하게 소장할 수 있는 개인화된 경험을 제공하며, PIC2GO에서만 얻을 수 있는 독점적인 기념품을 즉시 가져갈 수 있습니다.'
         : lang === 'en'
-        ? 'PIC2GO is a kiosk service that allows fans to instantly print officially licensed unreleased K-Pop Idol photos. Featuring an exclusive collection available only at PIC2GO, the service gives fans access to premium photos that cannot be found anywhere else. Users simply search for their favorite artist or desired image, select their preferred photo, and print it instantly. With a fast, convenient, and enjoyable experience, PIC2GO offers a more personalized way to collect K-Pop Idol photos while taking home exclusive keepsakes available only through PIC2GO.'
-        : 'PIC2GO merupakan layanan kiosk yang dapat langsung mencetak foto K-Pop Idol secara instan. PIC2GO menyediakan koleksi foto eksklusif yang belum pernah dipublikasikan kepada publik yang diperoleh melalui lisensi resmi. Pengguna hanya perlu mencari nama artis atau gambar yang diinginkan, memilih foto favorit, kemudian langsung mencetaknya melalui kiosk. Dengan proses yang cepat, mudah, dan menyenangkan, PIC2GO menghadirkan pengalaman yang lebih personal dalam mengoleksi foto K-Pop Idol serta memberikan kenang-kenangan eksklusif yang dapat langsung dibawa pulang.',
+          ? 'PIC2GO is a kiosk service that allows fans to instantly print officially licensed unreleased K-Pop Idol photos. Featuring an exclusive collection available only at PIC2GO, the service gives fans access to premium photos that cannot be found anywhere else. Users simply search for their favorite artist or desired image, select their preferred photo, and print it instantly. With a fast, convenient, and enjoyable experience, PIC2GO offers a more personalized way to collect K-Pop Idol photos while taking home exclusive keepsakes available only through PIC2GO.'
+          : 'PIC2GO merupakan layanan kiosk yang dapat langsung mencetak foto K-Pop Idol secara instan. PIC2GO menyediakan koleksi foto eksklusif yang belum pernah dipublikasikan kepada publik yang diperoleh melalui lisensi resmi. Pengguna hanya perlu mencari nama artis atau gambar yang diinginkan, memilih foto favorit, kemudian langsung mencetaknya melalui kiosk. Dengan proses yang cepat, mudah, dan menyenangkan, PIC2GO menghadirkan pengalaman yang lebih personal dalam mengoleksi foto K-Pop Idol serta memberikan kenang-kenangan eksklusif yang dapat langsung dibawa pulang.',
     };
   }
 
@@ -176,8 +175,8 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       description: lang === 'ko'
         ? '인도네시아에서 K-Pop 아이돌들과 K-Drama 배우들의 콘서트 및 팬미팅 그리고 팬싸인회를 통해서 팬들에게 더 큰 즐거움과 기쁨을 드리도록 하겠으며 콘서트 현장과 팬미팅 현장에서 아이돌그리고 배우의 MD 판매와 K-Food 판매도 진행하도록 하겠습니다.'
         : lang === 'en'
-        ? 'In Indonesia, through concerts, fanmeetings, and fan signing events featuring K-Pop Idol and K-Drama actors, we will provide fans with greater enjoyment and happiness. Through these events, we will also provide official merchandise (MD) from artists and actors, along with K-Food offerings at concert and fan meeting venues'
-        : 'Di Indonesia, melalui konser, fanmeeting, dan fan signing bersama K-Pop Idol serta aktor K-drama, kami berupaya untuk memberikan kesenangan dan kebahagiaan yang lebih besar para penggemar. Di lokasi konser dan lokasi fanmeeting, kami juga akan melakukan penjualan merchandise dari idol dan aktor, serta penjualan K-Food.',
+          ? 'In Indonesia, through concerts, fanmeetings, and fan signing events featuring K-Pop Idol and K-Drama actors, we will provide fans with greater enjoyment and happiness. Through these events, we will also provide official merchandise (MD) from artists and actors, along with K-Food offerings at concert and fan meeting venues'
+          : 'Di Indonesia, melalui konser, fanmeeting, dan fan signing bersama K-Pop Idol serta aktor K-drama, kami berupaya untuk memberikan kesenangan dan kebahagiaan yang lebih besar para penggemar. Di lokasi konser dan lokasi fanmeeting, kami juga akan melakukan penjualan merchandise dari idol dan aktor, serta penjualan K-Food.',
     };
   }
 
@@ -189,8 +188,8 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       description: lang === 'ko'
         ? '인도네시아에 진출하는 한국 기업과 인도네시아 아티스트를 광고모델 또는 제품모델로 연결해 드릴 것이며 한국의 상품이 인도네시아 마케팅 하는 것에 대해 크게 도움드릴 수 있도록 하겠습니다.'
         : lang === 'en'
-        ? 'We will connect Korean K-pop idols and actors as advertising models or product ambassadors for products manufactured in Indonesia. For artists selected as product models, we will produce exclusive photocards and plan promotional events where these photocards will be distributed as special gifts with product purchases.'
-        : 'Kami akan menghubungkan penyanyi idol Korea dan aktor Korea sebagai model iklan atau model produk untuk produk-produk yang diproduksi di Indonesia. Untuk artis yang telah dipilih sebagai model produk, kami akan membuat photocard eksklusif dan juga merencanakan pemberian photocard sebagai hadiah dengan pembelian produk.',
+          ? 'We will connect Korean K-pop idols and actors as advertising models or product ambassadors for products manufactured in Indonesia. For artists selected as product models, we will produce exclusive photocards and plan promotional events where these photocards will be distributed as special gifts with product purchases.'
+          : 'Kami akan menghubungkan penyanyi idol Korea dan aktor Korea sebagai model iklan atau model produk untuk produk-produk yang diproduksi di Indonesia. Untuk artis yang telah dipilih sebagai model produk, kami akan membuat photocard eksklusif dan juga merencanakan pemberian photocard sebagai hadiah dengan pembelian produk.',
     };
   }
 
@@ -202,8 +201,8 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       description: lang === 'ko'
         ? '인도네시아에서 생산되는 상품의 광고모델 또는 제품모델로 한국 아이돌 가수 및 한국 배우들을 연결해 드릴 것이며 상품 모델로 결정된 아티스트의 포토카드를 제작하여 상품 판매 시 포토카드를 증정하는 행사도 계획하도록 하겠습니다.'
         : lang === 'en'
-        ? 'We connect Korean companies entering the Indonesian market with Indonesian artists as advertising models and brand ambassadors, helping them develop effective marketing strategies and enhance brand awareness in Indonesia. Through strategic collaborations, we support Korean brands in successfully promoting their products and expanding their presence in the Indonesian market.'
-        : 'Kami menghubungkan perusahaan Korea yang ingin memasuki pasar Indonesia dengan artis Indonesia sebagai model iklan dan brand ambassador, untuk membantu membangun strategi pemasaran yang lebih kuat serta meningkatkan kesadaran merek di Indonesia. Melalui kolaborasi strategis, kami bertujuan mendukung brand Korea dalam mempromosikan produk mereka dan memperluas kehadirannya di pasar Indonesia.',
+          ? 'We connect Korean companies entering the Indonesian market with Indonesian artists as advertising models and brand ambassadors, helping them develop effective marketing strategies and enhance brand awareness in Indonesia. Through strategic collaborations, we support Korean brands in successfully promoting their products and expanding their presence in the Indonesian market.'
+          : 'Kami menghubungkan perusahaan Korea yang ingin memasuki pasar Indonesia dengan artis Indonesia sebagai model iklan dan brand ambassador, untuk membantu membangun strategi pemasaran yang lebih kuat serta meningkatkan kesadaran merek di Indonesia. Melalui kolaborasi strategis, kami bertujuan mendukung brand Korea dalam mempromosikan produk mereka dan memperluas kehadirannya di pasar Indonesia.',
     };
   }
 
@@ -215,8 +214,8 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       description: lang === 'ko'
         ? '인도네시아 인플루언서와 파트너쉽을 맺고 한국 상품 및 인도네시아 상품 마케팅과 판매에 도움드릴수 있도록 할것이며 한국 인플루언서의 인도네시아 활동에 대해 도움드릴수 있도록 하겠으며 인도네시아 상품이 한국에서 많이 팔릴수 있도록 한국 인플루언서들과 협업하도록 하겠습니다.'
         : lang === 'en'
-        ? 'We will establish partnerships with Indonesian influencers to support the marketing and sales of both Korean and Indonesian products. We will also provide support for Korean influencers activities in Indonesia and collaborate with Korean influencers to help Indonesian products gain greater recognition and achieve stronger sales opportunities in the Korean market.'
-        : 'Kami akan menjalin kemitraan dengan influencer Indonesia untuk membantu pemasaran dan penjualan produk Korea maupun produk Indonesia. Kami juga akan membantu aktivitas influencer Korea di Indonesia, serta bekerja sama dengan influencer Korea agar produk-produk Indonesia dapat lebih dikenal dan memiliki peluang penjualan yang lebih besar di pasar Korea.',
+          ? 'We will establish partnerships with Indonesian influencers to support the marketing and sales of both Korean and Indonesian products. We will also provide support for Korean influencers activities in Indonesia and collaborate with Korean influencers to help Indonesian products gain greater recognition and achieve stronger sales opportunities in the Korean market.'
+          : 'Kami akan menjalin kemitraan dengan influencer Indonesia untuk membantu pemasaran dan penjualan produk Korea maupun produk Indonesia. Kami juga akan membantu aktivitas influencer Korea di Indonesia, serta bekerja sama dengan influencer Korea agar produk-produk Indonesia dapat lebih dikenal dan memiliki peluang penjualan yang lebih besar di pasar Korea.',
     };
   }
 
@@ -283,15 +282,15 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
     lang === 'ko'
       ? '서비스 더보기'
       : lang === 'en'
-      ? 'Show More Services'
-      : 'Lihat Lebih Banyak Service';
+        ? 'Show More Services'
+        : 'Lihat Lebih Banyak Service';
 
   const showLessLabel =
     lang === 'ko'
       ? '접기'
       : lang === 'en'
-      ? 'Show Less'
-      : 'Tampilkan Lebih Sedikit';
+        ? 'Show Less'
+        : 'Tampilkan Lebih Sedikit';
 
   return (
     <section id="services" className="py-24 md:py-32 border-t border-[#607D94]/15 bg-[#F4F9FC] text-[#102B3F] transition-colors duration-300">

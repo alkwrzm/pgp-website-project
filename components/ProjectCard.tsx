@@ -158,12 +158,6 @@ export default function ProjectCard({ title, category, imageUrl, images, eventDa
             {/* Details section */}
             <div className="md:w-2/5 p-6 md:p-8 flex flex-col justify-between overflow-y-auto bg-[#0D2333] border-t md:border-t-0 md:border-l border-[#3BBBE2]/20 text-white">
               <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 bg-[#3BBBE2]/20 text-[#3BBBE2] border border-[#3BBBE2]/30 rounded-full text-xs uppercase font-semibold tracking-wide flex items-center gap-1.5">
-                    <Tag className="w-3 h-3 text-[#3BBBE2]" />
-                    {category}
-                  </span>
-                </div>
 
                 <h2 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                   {title}

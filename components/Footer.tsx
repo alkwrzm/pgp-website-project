@@ -59,7 +59,7 @@ export default function Footer() {
               className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
-          <p className="max-w-sm text-sm font-normal leading-relaxed text-slate-300">
+          <p className="max-w-sm text-sm font-normal leading-relaxed text-slate-300 [word-break:keep-all]">
             {text.desc}
           </p>
         </div>
