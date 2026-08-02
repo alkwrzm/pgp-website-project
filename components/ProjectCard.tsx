@@ -72,9 +72,6 @@ export default function ProjectCard({ title, category, imageUrl, images, eventDa
         
         <div className="p-4 flex flex-col gap-2 bg-white">
           <div className="flex items-center justify-between gap-2 overflow-hidden">
-            <span className="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-[#3BBBE2]/20 bg-[#3BBBE2]/10 text-[#1A7B9B] truncate max-w-[60%]" title={category}>
-              {category}
-            </span>
             {formattedDate && (
               <span className="text-[11px] font-mono flex-shrink-0 text-[#607D94]">
                 {formattedDate}

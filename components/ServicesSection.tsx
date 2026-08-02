@@ -187,7 +187,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       subtitle: lang === 'ko' ? '인도네시아 브랜드 & 한국 아티스트 매칭' : lang === 'en' ? 'Connecting Indonesian Brands & Korean Idols' : (service.subtitle || ''),
       category: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising/Talent Agency' : 'Agensi Iklan/Model',
       description: lang === 'ko'
-        ? '인도네시아에 진출하는 한국 기업과 인도네시아 아티스트를 광고모델 또는 제품모델로연결해 드릴것이며 한국의 상품이 인도네시아 마케팅 하는것에 대해 크게 도움드릴 수 있도록 하겠습니다.'
+        ? '인도네시아에 진출하는 한국 기업과 인도네시아 아티스트를 광고모델 또는 제품모델로 연결해 드릴 것이며 한국의 상품이 인도네시아 마케팅 하는 것에 대해 크게 도움드릴 수 있도록 하겠습니다.'
         : lang === 'en'
         ? 'We will connect Korean K-pop idols and actors as advertising models or product ambassadors for products manufactured in Indonesia. For artists selected as product models, we will produce exclusive photocards and plan promotional events where these photocards will be distributed as special gifts with product purchases.'
         : 'Kami akan menghubungkan penyanyi idol Korea dan aktor Korea sebagai model iklan atau model produk untuk produk-produk yang diproduksi di Indonesia. Untuk artis yang telah dipilih sebagai model produk, kami akan membuat photocard eksklusif dan juga merencanakan pemberian photocard sebagai hadiah dengan pembelian produk.',
@@ -200,7 +200,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       subtitle: lang === 'ko' ? '한국 브랜드 & 인도네시아 아티스트 매칭' : lang === 'en' ? 'Connecting Korean Brands & Indonesian Artists' : (service.subtitle || ''),
       category: lang === 'ko' ? '기업 파트너십 에이전시' : lang === 'en' ? 'Business Partnership Agency' : 'Agensi Penghubung Perusahaan',
       description: lang === 'ko'
-        ? '인도네시아에서 생산되는 상품의 광고모델 또는 제품모델로 한국 아이돌 가수 및 한국배우들을 연결해드릴것이며 상품 모델로 결정된 아티스트의 포토카드를 제작하여 상품판매시 포토카드를 증정하는 행사도 계획하도록 하겠습니다.'
+        ? '인도네시아에서 생산되는 상품의 광고모델 또는 제품모델로 한국 아이돌 가수 및 한국 배우들을 연결해 드릴 것이며 상품 모델로 결정된 아티스트의 포토카드를 제작하여 상품 판매 시 포토카드를 증정하는 행사도 계획하도록 하겠습니다.'
         : lang === 'en'
         ? 'We connect Korean companies entering the Indonesian market with Indonesian artists as advertising models and brand ambassadors, helping them develop effective marketing strategies and enhance brand awareness in Indonesia. Through strategic collaborations, we support Korean brands in successfully promoting their products and expanding their presence in the Indonesian market.'
         : 'Kami menghubungkan perusahaan Korea yang ingin memasuki pasar Indonesia dengan artis Indonesia sebagai model iklan dan brand ambassador, untuk membantu membangun strategi pemasaran yang lebih kuat serta meningkatkan kesadaran merek di Indonesia. Melalui kolaborasi strategis, kami bertujuan mendukung brand Korea dalam mempromosikan produk mereka dan memperluas kehadirannya di pasar Indonesia.',
@@ -298,7 +298,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#102B3F]">{text.title}</h2>
-          <p className="max-w-3xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify">
+          <p className="max-w-3xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify [word-break:keep-all]">
             {text.desc}
           </p>
         </div>
@@ -338,7 +338,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                     )}
 
                     {loc.description && (
-                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify">
+                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
                         {loc.description}
                       </p>
                     )}
@@ -382,7 +382,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                         <p className="text-xs font-mono mb-4 text-[#607D94]">{loc.subtitle}</p>
                       )}
                       {loc.description && (
-                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify">
+                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
                           {loc.description}
                         </p>
                       )}

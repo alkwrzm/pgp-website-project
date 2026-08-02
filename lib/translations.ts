@@ -17,7 +17,7 @@ export const t = {
     },
     services: {
       badge: '[ LAYANAN KAMI ]',
-      title: 'Business Plan di Indonesia',
+      title: 'Business Plans in Indonesia',
       desc: 'PT PGP INT PACIFIC memiliki rencana dalam berbagai bisnis di Indonesia yang berkaitan dengan K-Pop, K-Drama, dan K-Beauty:',
       viewGallery: 'Lihat Full Galeri / App UI',
       previewTitle: 'Preview',
@@ -25,7 +25,7 @@ export const t = {
     },
     portfolio: {
       badge: '[ PROJECT PILIHAN ]',
-      title: 'Project Terbaru Kami di Korea',
+      title: 'Our Recent Projects in Korea',
       desc: 'PT. PGP INT PACIFIC merupakan perusahaan yang didirikan oleh perusahaan Korea LIVECONNECT CO., LTD yang telah berhasil menyelenggarakan berbagai proyek berskala global. Melalui berbagai kegiatan, LIVECONNECT telah menghadirkan pengalaman yang berkesan bagi penggemar K-Pop di berbagai negara, seperti Korea Selatan, Jepang, Tiongkok, Amerika Serikat, dan lain-lain.',
       empty: 'Belum ada project yang diunggah. Tambahkan melalui CMS Admin.',
       dbError: 'Portfolio sedang disiapkan. Harap sambungkan database.',
@@ -89,7 +89,7 @@ export const t = {
       },
     },
     footer: {
-      desc: 'PT PGP INT PACIFIC - Agensi Event & Penghubung Bisnis K-Pop, K-Drama & K-Beauty Terdepan di Indonesia.',
+      desc: 'PT PGP INT PACIFIC - Premier K-Pop, K-Drama & K-Beauty Event Agency & Business Connector in Indonesia.',
       services: 'LAYANAN',
       company: 'PERUSAHAAN',
       privacy: 'Kebijakan Privasi',
@@ -283,7 +283,7 @@ export const t = {
       },
     },
     footer: {
-      desc: 'PT PGP INT PACIFIC - 인도네시아 최고의 K-Pop, K-Drama & K-Beauty 이벤트 에이전시 및 비즈니스 커넥터.',
+      desc: 'PT PGP INT PACIFIC - Premier K-Pop, K-Drama & K-Beauty Event Agency & Business Connector in Indonesia.',
       services: '서비스',
       company: '회사 소개',
       privacy: '개인정보 처리방침',

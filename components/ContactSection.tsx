@@ -51,10 +51,10 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase mb-4 text-[#1A7B9B]">{text.badge}</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 sm:mb-8 text-[#102B3F]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 sm:mb-8 text-[#102B3F] [word-break:keep-all]">
               {text.title}
             </h2>
-            <p className="text-sm sm:text-base font-normal mb-8 sm:mb-12 leading-relaxed text-[#607D94]">
+            <p className="text-sm sm:text-base font-normal mb-8 sm:mb-12 leading-relaxed text-[#607D94] [word-break:keep-all]">
               {text.desc}
             </p>
 
