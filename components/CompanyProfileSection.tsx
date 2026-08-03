@@ -15,17 +15,17 @@ export default function CompanyProfileSection() {
 
           {lang === 'ko' ? (
             /* Korean Content */
-            <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F] text-justify">
-              저희 <strong className="font-bold text-[#102B3F] whitespace-nowrap">PT. PGP INT PACIFIC</strong>은 한국에서 검증된 기획력과 실행력을 바탕으로 인도네시아 <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Drama</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Beauty</span> 팬들에게 새로운 감동과 기쁨을 드리기 위해 2026년 5월 인도네시아 자카르타에 설립되었으며 인도네시아에서 활기차고 신뢰받는 기업이 되도록 최선의 노력을 다 하겠습니다.
+            <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F]">
+              저희 <strong className="font-bold text-[#102B3F] whitespace-nowrap">PT. PGP INT PACIFIC</strong>은 한국에서 검증된 기획력과 실행력을 바탕으로 인도네시아 <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Drama</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Beauty</span> 팬들에게 새로운 감동과 기쁨을 드리기 위해 2026년 5월 인도네시아 <span className="whitespace-nowrap">자카르타에</span> <span className="whitespace-nowrap">설립되었으며</span> 인도네시아에서 활기차고 신뢰받는 기업이 되도록 최선의 노력을 다 하겠습니다.
             </p>
           ) : lang === 'en' ? (
             /* English Content */
-            <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F] text-justify">
+            <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F]">
               <strong className="font-bold text-[#102B3F] whitespace-nowrap">PT. PGP INT PACIFIC</strong> was established in May 2026 in Jakarta, bringing proven planning and execution capabilities from Korea. We are present in Indonesia to deliver fresh, exciting, and memorable experiences for all fans of <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Drama</span>, and <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Beauty</span> through high-quality events, activities, and strategic collaborations.
             </p>
           ) : (
             /* Indonesian Content (Default) */
-            <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F] text-justify">
+            <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F]">
               <strong className="font-bold text-[#102B3F] whitespace-nowrap">PT. PGP INT PACIFIC</strong> didirikan pada Mei 2026 di Jakarta, dengan membawa pengalaman dan kemampuan yang telah teruji di Korea. Kami hadir di Indonesia untuk memberikan pengalaman baru yang menyenangkan dan berkesan bagi seluruh penggemar <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Drama</span>, dan <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Beauty</span> melalui berbagai acara, aktivitas, dan kolaborasi yang berkualitas.
             </p>
           )}

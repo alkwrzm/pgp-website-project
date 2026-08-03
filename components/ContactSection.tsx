@@ -54,7 +54,7 @@ export default function ContactSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 sm:mb-8 text-[#102B3F] [word-break:keep-all]">
               {text.title}
             </h2>
-            <p className="text-sm sm:text-base font-normal mb-8 sm:mb-12 leading-relaxed text-[#607D94] [word-break:keep-all]">
+            <p className="text-sm sm:text-base font-normal mb-8 sm:mb-12 leading-relaxed text-[#607D94] [word-break:keep-all] whitespace-pre-line">
               {text.desc}
             </p>
 

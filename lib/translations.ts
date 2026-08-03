@@ -26,7 +26,7 @@ export const t = {
     portfolio: {
       badge: '[ PROJECT PILIHAN ]',
       title: 'Our Recent Projects in Korea',
-      desc: 'PT. PGP INT PACIFIC merupakan perusahaan yang didirikan oleh perusahaan Korea LIVECONNECT CO., LTD yang telah berhasil menyelenggarakan berbagai proyek berskala global. Melalui berbagai kegiatan, LIVECONNECT telah menghadirkan pengalaman yang berkesan bagi penggemar K-Pop di berbagai negara, seperti Korea Selatan, Jepang, Tiongkok, Amerika Serikat, dan lain-lain.',
+      desc: 'PT. PGP INT PACIFIC merupakan perusahaan yang didirikan oleh perusahaan Korea LIVECONNECT\u00A0CO.,\u00A0LTD yang telah berhasil menyelenggarakan berbagai proyek berskala global. Melalui berbagai kegiatan, LIVECONNECT telah menghadirkan pengalaman yang berkesan bagi penggemar K-Pop di berbagai negara, seperti Korea Selatan, Jepang, Tiongkok, Amerika Serikat, dan lain-lain.',
       empty: 'Belum ada project yang diunggah. Tambahkan melalui CMS Admin.',
       dbError: 'Portfolio sedang disiapkan. Harap sambungkan database.',
       photoUnit: 'Foto',
@@ -131,7 +131,7 @@ export const t = {
     contact: {
       badge: '[ GET IN TOUCH ]',
       title: "Let's Collaborate Together.",
-      desc: 'Interested in K-Pop event collaborations, PocketDrop, PIC2GO, or influencer partnerships? Contact the PT PGP INT PACIFIC team.',
+      desc: 'Interested in K-Pop event collaborations, PocketDrop, PIC2GO, or influencer partnerships?\nContact the PT PGP INT PACIFIC team.',
       emailUs: 'Email Us',
       headquarter: 'Headquarters',
       city: 'Jakarta, Indonesia',

@@ -163,20 +163,20 @@ function getLocalizedServiceContent(service: Service, lang: string) {
         ? 'PIC2GO는 K-Pop 아이돌의 공식 라이선스 미공개 사진을 즉시 출력할 수 있는 키오스크 서비스입니다. PIC2GO에서만 만나볼 수 있는 독점적인 미공개 사진 컬렉션을 통해 팬들에게 더욱 특별한 경험을 제공합니다. 사용자는 원하는 아티스트 이름이나 사진을 검색한 후, 마음에 드는 사진을 선택하여 키오스크에서 바로 출력할 수 있습니다. 빠르고 간편하며 즐거운 이용 과정을 통해 PIC2GO는 K-Pop 아이돌 사진을 더욱 특별하게 소장할 수 있는 개인화된 경험을 제공하며, PIC2GO에서만 얻을 수 있는 독점적인 기념품을 즉시 가져갈 수 있습니다.'
         : lang === 'en'
           ? 'PIC2GO is a kiosk service that allows fans to instantly print officially licensed unreleased K-Pop Idol photos. Featuring an exclusive collection available only at PIC2GO, the service gives fans access to premium photos that cannot be found anywhere else. Users simply search for their favorite artist or desired image, select their preferred photo, and print it instantly. With a fast, convenient, and enjoyable experience, PIC2GO offers a more personalized way to collect K-Pop Idol photos while taking home exclusive keepsakes available only through PIC2GO.'
-          : 'PIC2GO merupakan layanan kiosk yang dapat langsung mencetak foto K-Pop Idol secara instan. PIC2GO menyediakan koleksi foto eksklusif yang belum pernah dipublikasikan kepada publik yang diperoleh melalui lisensi resmi. Pengguna hanya perlu mencari nama artis atau gambar yang diinginkan, memilih foto favorit, kemudian langsung mencetaknya melalui kiosk. Dengan proses yang cepat, mudah, dan menyenangkan, PIC2GO menghadirkan pengalaman yang lebih personal dalam mengoleksi foto K-Pop Idol serta memberikan kenang-kenangan eksklusif yang dapat langsung dibawa pulang.',
+          : 'PIC2GO merupakan layanan kiosk yang dapat langsung mencetak foto K-Pop Idol secara instan. PIC2GO menyediakan koleksi foto eksklusif yang belum pernah dipublikasikan yang diperoleh melalui lisensi resmi. Pengguna hanya perlu mencari nama artis atau gambar yang diinginkan, memilih foto favorit, kemudian langsung mencetaknya melalui kiosk. Dengan proses yang cepat, mudah, dan menyenangkan, PIC2GO menghadirkan pengalaman yang lebih personal dalam mengoleksi foto K-Pop Idol serta memberikan kenang-kenangan eksklusif yang dapat langsung dibawa pulang.',
     };
   }
 
   if (titleLower.includes('konser') || titleLower.includes('concert') || titleLower.includes('fanmeeting')) {
     return {
-      title: lang === 'ko' ? 'K-Pop 콘서트와 팬미팅' : lang === 'en' ? 'K-Pop Concert & Fanmeeting' : 'Konser dan Fanmeeting K-Pop',
+      title: lang === 'ko' ? 'K-Pop 콘서트와 팬미팅' : lang === 'en' ? 'K-Pop Concert & Fanmeeting' : 'Konser dan Fanmeeting\nK-Pop',
       subtitle: lang === 'ko' ? '이벤트 주최 및 팬사인회 기획' : lang === 'en' ? 'Event hosting & fansign organization' : (service.subtitle || ''),
       category: lang === 'ko' ? '콘서트 & 팬미팅' : lang === 'en' ? 'Concert & Fanmeeting' : 'Konser & Fanmeeting',
       description: lang === 'ko'
-        ? '인도네시아에서 K-Pop 아이돌들과 K-Drama 배우들의 콘서트 및 팬미팅 그리고 팬싸인회를 통해서 팬들에게 더 큰 즐거움과 기쁨을 드리도록 하겠으며 콘서트 현장과 팬미팅 현장에서 아이돌그리고 배우의 MD 판매와 K-Food 판매도 진행하도록 하겠습니다.'
+        ? '인도네시아에서 K\u2011Pop 아이돌들과 K\u2011Drama 배우들의 콘서트 및 팬미팅 그리고 팬싸인회를 통해서 팬들에게 더 큰 즐거움과 기쁨을 드리도록 하겠으며 콘서트 현장과 팬미팅 현장에서 아이돌그리고 배우의 MD 판매와 K\u2011Food 판매도 진행하도록 하겠습니다.'
         : lang === 'en'
-          ? 'In Indonesia, through concerts, fanmeetings, and fan signing events featuring K-Pop Idol and K-Drama actors, we will provide fans with greater enjoyment and happiness. Through these events, we will also provide official merchandise (MD) from artists and actors, along with K-Food offerings at concert and fan meeting venues'
-          : 'Di Indonesia, melalui konser, fanmeeting, dan fan signing bersama K-Pop Idol serta aktor K-drama, kami berupaya untuk memberikan kesenangan dan kebahagiaan yang lebih besar para penggemar. Di lokasi konser dan lokasi fanmeeting, kami juga akan melakukan penjualan merchandise dari idol dan aktor, serta penjualan K-Food.',
+          ? 'In Indonesia, through concerts, fanmeetings, and fan signing events featuring K\u2011Pop Idol and K\u2011Drama actors, we will provide fans with greater enjoyment and happiness. Through these events, we will also provide official merchandise (MD) from artists and actors, along with K\u2011Food offerings at concert and fan meeting venues'
+          : 'Di Indonesia, melalui konser, fanmeeting, dan fan signing bersama K\u2011Pop Idol serta aktor K\u2011drama, kami berupaya untuk memberikan dan kebahagiaan yang lebih besar para penggemar. Di lokasi konser dan lokasi fanmeeting, kami juga akan melakukan penjualan merchandise dari idol dan aktor, serta penjualan K\u2011Food.',
     };
   }
 
@@ -297,7 +297,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#102B3F]">{text.title}</h2>
-          <p className="max-w-3xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] text-justify [word-break:keep-all]">
+          <p className="max-w-3xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] [word-break:keep-all]">
             {text.desc}
           </p>
         </div>
@@ -326,7 +326,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                       </span>
                     </div>
 
-                    <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F]">
+                    <h3 className="text-3xl md:text-4xl font-bold mb-2 leading-tight text-[#102B3F] whitespace-pre-line">
                       {loc.title}
                     </h3>
 
@@ -337,7 +337,7 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                     )}
 
                     {loc.description && (
-                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
+                      <p className="text-sm md:text-base font-normal leading-relaxed whitespace-pre-line text-[#607D94] [word-break:keep-all]">
                         {loc.description}
                       </p>
                     )}
@@ -376,12 +376,12 @@ export default function ServicesSection({ dynamicServices }: { dynamicServices: 
                       <span className="text-[10px] font-mono uppercase tracking-widest block mb-2 text-[#1A7B9B] font-semibold">
                         {loc.category || service.category}
                       </span>
-                      <h3 className="text-2xl font-bold mb-2 text-[#102B3F]">{loc.title}</h3>
+                      <h3 className="text-2xl font-bold mb-2 text-[#102B3F] whitespace-pre-line">{loc.title}</h3>
                       {loc.subtitle && (
                         <p className="text-xs font-mono mb-4 text-[#607D94]">{loc.subtitle}</p>
                       )}
                       {loc.description && (
-                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] text-justify [word-break:keep-all]">
+                        <p className="text-sm font-normal leading-relaxed whitespace-pre-line text-[#607D94] [word-break:keep-all]">
                           {loc.description}
                         </p>
                       )}

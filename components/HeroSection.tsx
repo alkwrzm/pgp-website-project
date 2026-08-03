@@ -72,9 +72,11 @@ export default function HeroSection() {
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#1A7B9B]/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-[#3BBBE2]/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Floating Interactive Badge 1: Top-Left */}
+      {/* Constraining Container for Badges so they don't spread infinitely on ultra-wides */}
+      <div className="absolute inset-0 w-full max-w-[1400px] mx-auto pointer-events-none">
+        {/* Floating Interactive Badge 1: Top-Left */}
       <div
-        className="absolute top-16 left-6 md:top-24 md:left-24 transition-transform duration-500 ease-out pointer-events-auto hidden md:block"
+        className="absolute top-[26vh] left-4 md:top-24 md:left-24 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-top-left"
         style={{
           transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px) rotate(-3deg)`,
         }}
@@ -92,7 +94,7 @@ export default function HeroSection() {
 
       {/* Floating Interactive Badge 2: Top-Right */}
       <div
-        className="absolute top-12 right-6 md:top-20 md:right-28 transition-transform duration-500 ease-out pointer-events-auto hidden md:block"
+        className="absolute top-[24vh] right-4 md:top-20 md:right-28 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-top-right"
         style={{
           transform: `translate(${mousePos.x * 50}px, ${mousePos.y * 30}px) rotate(4deg)`,
         }}
@@ -110,7 +112,7 @@ export default function HeroSection() {
 
       {/* Floating Interactive Badge 3: Bottom-Left */}
       <div
-        className="absolute bottom-20 left-8 md:bottom-28 md:left-32 transition-transform duration-500 ease-out pointer-events-auto hidden lg:block"
+        className="absolute bottom-48 left-6 md:bottom-28 md:left-32 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-bottom-left"
         style={{
           transform: `translate(${mousePos.x * -35}px, ${mousePos.y * 45}px) rotate(2deg)`,
         }}
@@ -128,7 +130,7 @@ export default function HeroSection() {
 
       {/* Floating Interactive Badge 4: Bottom-Right */}
       <div
-        className="absolute bottom-24 right-8 md:bottom-32 md:right-36 transition-transform duration-500 ease-out pointer-events-auto hidden lg:block"
+        className="absolute bottom-52 right-6 md:bottom-32 md:right-36 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-bottom-right"
         style={{
           transform: `translate(${mousePos.x * 40}px, ${mousePos.y * -35}px) rotate(-4deg)`,
         }}
@@ -144,6 +146,8 @@ export default function HeroSection() {
         </div>
       </div>
 
+      </div>
+
       {/* Main Big Center Title */}
       <div
         className="text-center relative z-10 max-w-6xl mx-auto transition-transform duration-300 ease-out pointer-events-auto"
@@ -151,7 +155,7 @@ export default function HeroSection() {
           transform: `translate(${mousePos.x * 15}px, ${mousePos.y * 15}px)`,
         }}
       >
-        <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black tracking-tighter leading-none text-[#102B3F] transition-transform duration-300 hover:scale-[1.02]">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] font-black tracking-tighter leading-none text-[#102B3F] transition-transform duration-300 hover:scale-[1.02]">
           <span className="text-[#3BBBE2]">P</span>lay <span className="text-[#3BBBE2]">G</span>round{' '}
           <span className="text-[#3BBBE2]">P</span>layful
         </h1>
