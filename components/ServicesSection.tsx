@@ -147,7 +147,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       subtitle: lang === 'ko' ? '디지털 포토카드 수집 및 리워드 앱' : lang === 'en' ? 'Digital photocard collection & reward app' : (service.subtitle || ''),
       category: lang === 'ko' ? '포토카드 & 굿즈' : 'Photocard & Merchandise',
       description: lang === 'ko'
-        ? 'PocketDrop은 공식 라이선스를 보유한 K-Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K-Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
+        ? 'PocketDrop은 공식 라이선스를 보유한 K-Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K-Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
         : lang === 'en'
           ? 'PocketDrop is a digital photocard collection platform featuring officially licensed K-Pop artists. Users can collect digital photocards, complete full sets to redeem exclusive, previously unreleased physical photocards, and receive personalized AI-generated video messages from their favorite K-Pop artist.'
           : 'PocketDrop adalah platform untuk mengoleksi photocard digital berlisensi resmi dari artis K-Pop. Pengguna dapat mengoleksi photocard digital, melengkapi set untuk mendapatkan photocard fisik edisi terbatas yang belum pernah dirilis, serta menerima pesan video AI yang dipersonalisasi dari artis K-Pop favorit mereka.',
@@ -160,7 +160,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       subtitle: lang === 'ko' ? '아이돌 포토 컬렉션 출력 키오스크 기기' : lang === 'en' ? 'Idol photo collection printing kiosk machine' : (service.subtitle || ''),
       category: lang === 'ko' ? '아이돌 포토 & 굿즈' : 'Idol Photo & Merchandise',
       description: lang === 'ko'
-        ? 'PIC2GO는 K-Pop 아이돌의 공식 라이선스 미공개 사진을 즉시 출력할 수 있는 키오스크 서비스입니다. PIC2GO에서만 만나볼 수 있는 독점적인 미공개 사진 컬렉션을 통해 팬들에게 더욱 특별한 경험을 제공합니다. 사용자는 원하는 아티스트 이름이나 사진을 검색한 후, 마음에 드는 사진을 선택하여 키오스크에서 바로 출력할 수 있습니다. 빠르고 간편하며 즐거운 이용 과정을 통해 PIC2GO는 K-Pop 아이돌 사진을 더욱 특별하게 소장할 수 있는 개인화된 경험을 제공하며, PIC2GO에서만 얻을 수 있는 독점적인 기념품을 즉시 가져갈 수 있습니다.'
+        ? 'PIC2GO는 K-Pop 아이돌의 공식 라이선스 미공개 사진을 즉시 출력할 수 있는 키오스크 서비스입니다. PIC2GO에서만 만나볼 수 있는 독점적인 미공개 사진 컬렉션을 통해 팬들에게 더욱 특별한 경험을 제공합니다. 사용자는 원하는 아티스트 이름이나 사진을 검색한 후, 마음에 드는 사진을 선택하여 키오스크에서 바로 출력할 수 있습니다. 빠르고 간편하며 즐거운 이용 과정을 통해 PIC2GO는 K-Pop 아이돌 사진을 더욱 특별하게 소장할 수 있는 개인화된 경험을 제공하며, PIC2GO에서만 얻을 수 있는 독점적인 기념품을 즉시 가져갈 수 있습니다.'
         : lang === 'en'
           ? 'PIC2GO is a kiosk service that allows fans to instantly print officially licensed unreleased K-Pop Idol photos. Featuring an exclusive collection available only at PIC2GO, the service gives fans access to premium photos that cannot be found anywhere else. Users simply search for their favorite artist or desired image, select their preferred photo, and print it instantly. With a fast, convenient, and enjoyable experience, PIC2GO offers a more personalized way to collect K-Pop Idol photos while taking home exclusive keepsakes available only through PIC2GO.'
           : 'PIC2GO merupakan layanan kiosk yang dapat langsung mencetak foto K-Pop Idol secara instan. PIC2GO menyediakan koleksi foto eksklusif yang belum pernah dipublikasikan kepada publik yang diperoleh melalui lisensi resmi. Pengguna hanya perlu mencari nama artis atau gambar yang diinginkan, memilih foto favorit, kemudian langsung mencetaknya melalui kiosk. Dengan proses yang cepat, mudah, dan menyenangkan, PIC2GO menghadirkan pengalaman yang lebih personal dalam mengoleksi foto K-Pop Idol serta memberikan kenang-kenangan eksklusif yang dapat langsung dibawa pulang.',
