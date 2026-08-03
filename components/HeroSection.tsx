@@ -76,7 +76,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 w-full max-w-[1400px] mx-auto pointer-events-none">
         {/* Floating Interactive Badge 1: Top-Left */}
       <div
-        className="absolute top-[26vh] left-4 md:top-24 md:left-24 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-top-left"
+        className="absolute top-[20vh] left-4 md:top-24 md:left-24 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-top-left"
         style={{
           transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px) rotate(-3deg)`,
         }}
@@ -94,7 +94,7 @@ export default function HeroSection() {
 
       {/* Floating Interactive Badge 2: Top-Right */}
       <div
-        className="absolute top-[24vh] right-4 md:top-20 md:right-28 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-top-right"
+        className="absolute top-[18vh] right-4 md:top-20 md:right-28 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-top-right"
         style={{
           transform: `translate(${mousePos.x * 50}px, ${mousePos.y * 30}px) rotate(4deg)`,
         }}
@@ -112,7 +112,7 @@ export default function HeroSection() {
 
       {/* Floating Interactive Badge 3: Bottom-Left */}
       <div
-        className="absolute bottom-48 left-6 md:bottom-28 md:left-32 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-bottom-left"
+        className="absolute bottom-60 left-6 md:bottom-28 md:left-32 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-bottom-left"
         style={{
           transform: `translate(${mousePos.x * -35}px, ${mousePos.y * 45}px) rotate(2deg)`,
         }}
@@ -130,7 +130,7 @@ export default function HeroSection() {
 
       {/* Floating Interactive Badge 4: Bottom-Right */}
       <div
-        className="absolute bottom-52 right-6 md:bottom-32 md:right-36 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-bottom-right"
+        className="absolute bottom-64 right-6 md:bottom-32 md:right-36 transition-transform duration-500 ease-out pointer-events-auto z-20 scale-75 md:scale-100 origin-bottom-right"
         style={{
           transform: `translate(${mousePos.x * 40}px, ${mousePos.y * -35}px) rotate(-4deg)`,
         }}
@@ -150,7 +150,7 @@ export default function HeroSection() {
 
       {/* Main Big Center Title */}
       <div
-        className="text-center relative z-10 max-w-6xl mx-auto transition-transform duration-300 ease-out pointer-events-auto"
+        className="text-center relative z-10 max-w-6xl mx-auto transition-transform duration-300 ease-out pointer-events-auto -mt-16 md:mt-0"
         style={{
           transform: `translate(${mousePos.x * 15}px, ${mousePos.y * 15}px)`,
         }}
