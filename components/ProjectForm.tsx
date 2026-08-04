@@ -197,10 +197,9 @@ export default function ProjectForm({ initialData }: { initialData?: Project }) 
 
         <div>
           <label className="block text-xs uppercase font-semibold tracking-wider text-[#102B3F] mb-2">
-            Event Date *
+            Event Date <span className="text-[#607D94] font-normal lowercase">(opsional / kosongkan jika tidak ingin ditampilkan)</span>
           </label>
           <input 
-            required
             type="date" 
             value={formData.eventDate}
             onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}

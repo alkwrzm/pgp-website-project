@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { title, category, imageUrl, images, eventDate, description, isActive } = body;
 
-    if (!title || !category || (!imageUrl && (!images || images.length === 0)) || !eventDate) {
+    if (!title || !category || (!imageUrl && (!images || images.length === 0))) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
         category,
         imageUrl: primaryImage,
         images: finalImages,
-        eventDate: new Date(eventDate),
+        eventDate: eventDate ? new Date(eventDate) : null,
         description,
         ...(typeof isActive === 'boolean' && { isActive }),
       } as any,
