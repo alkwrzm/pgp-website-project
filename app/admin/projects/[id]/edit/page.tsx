@@ -15,7 +15,7 @@ export default async function EditProjectPage({ params }: { params: Promise<{ id
   // Convert Date to string for client component
   const plainProject = {
     ...project,
-    eventDate: project.eventDate.toISOString(),
+    eventDate: project.eventDate ? project.eventDate.toISOString() : '',
   };
 
   return (
