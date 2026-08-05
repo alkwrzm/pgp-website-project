@@ -147,7 +147,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       subtitle: lang === 'ko' ? '디지털 포토카드 수집 및 리워드 앱' : lang === 'en' ? 'Digital photocard collection & reward app' : (service.subtitle || ''),
       category: lang === 'ko' ? '포토카드 & 굿즈' : 'Photocard & Merchandise',
       description: lang === 'ko'
-        ? 'PocketDrop은 공식 라이선스를 보유한 K\\u2060-\\u2060Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K\\u2060-\\u2060Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
+        ? 'PocketDrop은 공식 라이선스를 보유한 K\u2060-\u2060Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K\u2060-\u2060Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
         : lang === 'en'
           ? 'PocketDrop is a digital photocard collection platform featuring officially licensed K-Pop artists. Users can collect digital photocards, complete full sets to redeem exclusive, previously unreleased physical photocards, and receive personalized AI-generated video messages from their favorite K-Pop artist.'
           : 'PocketDrop adalah platform untuk mengoleksi photocard digital berlisensi resmi dari artis K-Pop. Pengguna dapat mengoleksi photocard digital, melengkapi set untuk mendapatkan photocard fisik edisi terbatas yang belum pernah dirilis, serta menerima pesan video AI yang dipersonalisasi dari artis K-Pop favorit mereka.',
