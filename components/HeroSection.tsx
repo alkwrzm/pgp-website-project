@@ -140,8 +140,8 @@ export default function HeroSection() {
             <Sparkles className="w-4 h-4" />
           </div>
           <div className="text-left">
-            <span className="block text-xs font-bold leading-tight">K-Drama & Beauty</span>
-            <span className="block text-[10px] text-[#607D94] font-mono">Exhibitions</span>
+            <span className="block text-xs font-bold leading-tight">Model & Influencer</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">Agency</span>
           </div>
         </div>
       </div>

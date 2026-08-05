@@ -16,7 +16,7 @@ export default function CompanyProfileSection() {
           {lang === 'ko' ? (
             /* Korean Content */
             <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#102B3F]">
-              저희 <strong className="font-bold text-[#102B3F] whitespace-nowrap">PT. PGP INT PACIFIC</strong>은 한국에서 검증된 기획력과 실행력을 바탕으로 인도네시아 <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Drama</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Beauty</span> 팬들에게 새로운 감동과 기쁨을 드리기 위해 2026년 5월 인도네시아 <span className="whitespace-nowrap">자카르타에</span> <span className="whitespace-nowrap">설립되었으며</span> 인도네시아에서 활기차고 신뢰받는 기업이 되도록 최선의 노력을 다 하겠습니다.
+              저희 <strong className="font-bold text-[#102B3F] whitespace-nowrap">PT. PGP INT PACIFIC</strong>은 한국에서 검증된 <span className="whitespace-nowrap">기획력과</span> 실행력을 바탕으로 <span className="whitespace-nowrap">인도네시아</span> <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Drama</span>, <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Beauty</span> 팬들에게 새로운 감동과 <span className="whitespace-nowrap">기쁨을</span> 드리기 위해 2026년 5월 <span className="whitespace-nowrap">인도네시아</span> <span className="whitespace-nowrap">자카르타에</span> <span className="whitespace-nowrap">설립되었으며</span> <span className="whitespace-nowrap">인도네시아에서</span> 활기차고 신뢰받는 기업이 되도록 최선의 노력을 다 <span className="whitespace-nowrap">하겠습니다.</span>
             </p>
           ) : lang === 'en' ? (
             /* English Content */

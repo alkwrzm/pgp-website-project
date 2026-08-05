@@ -12,8 +12,8 @@ export default function Footer() {
   const portfolioText = t[lang].portfolio;
 
   const serviceLinks = lang === 'ko' ? [
-    { label: 'PocketDrop (앱 / 온라인)', href: '/#services' },
-    { label: 'PIC2GO (키오스크 / 오프라인)', href: '/#services' },
+    { label: 'PocketDrop (앱 / 온\u2060라\u2060인)', href: '/#services' },
+    { label: 'PIC2GO (키오스크 / 오\u2060프\u2060라\u2060인)', href: '/#services' },
     { label: 'K-Pop 콘서트와 팬미팅', href: '/#services' },
     { label: '광고 및 모델 에이전시', href: '/#services' },
     { label: '기업 파트너십 에이전시', href: '/#services' },
@@ -53,9 +53,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
         <div className="sm:col-span-2 md:col-span-2">
           <Link href="/" className="flex items-center gap-2 mb-6 group inline-block bg-white/95 px-3 py-2 rounded-xl border border-white/20 shadow-md">
-            <img 
-              src="/logo.png" 
-              alt="PGP Playground Playful Logo" 
+            <img
+              src="/logo.png"
+              alt="PGP Playground Playful Logo"
               className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
             {text.desc}
           </p>
         </div>
-        
+
         <div>
           <h4 className="font-semibold mb-4 sm:mb-6 tracking-wide text-xs uppercase font-mono text-[#3BBBE2]">{text.services}</h4>
           <ul className="space-y-2.5 text-sm font-normal text-slate-300">
@@ -74,7 +74,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        
+
         <div>
           <h4 className="font-semibold mb-4 sm:mb-6 tracking-wide text-xs uppercase font-mono text-[#3BBBE2]">{text.company}</h4>
           <ul className="space-y-2.5 text-sm font-normal text-slate-300">

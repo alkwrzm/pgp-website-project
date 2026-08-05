@@ -34,7 +34,7 @@ export const t = {
     contact: {
       badge: '[ HUBUNGI KAMI ]',
       title: 'Mari Berkolaborasi Bersama Kami.',
-      desc: 'Tertarik untuk kolaborasi acara K-Pop, PocketDrop, PIC2GO, atau kerjasama influencer? Hubungi tim PT PGP INT PACIFIC.',
+      desc: 'Tertarik untuk kolaborasi acara K-Pop, PocketDrop, PIC2GO, atau kerjasama influencer?\nHubungi tim PT PGP INT PACIFIC.',
       emailUs: 'Email Us',
       headquarter: 'Kantor Pusat',
       city: 'Jakarta, Indonesia',
@@ -220,7 +220,7 @@ export const t = {
     portfolio: {
       badge: '[ 주요 프로젝트 ]',
       title: '한국에서의 최근 프로젝트',
-      desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT CO., LTD가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT는 글로벌 전시 프로젝트와 공연을 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K-Pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
+      desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT\u00A0CO.,\u2060\u00A0LTD가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT는 글로벌 전시 프\u2060로\u2060젝\u2060트\u2060와 공연을 성\u2060공\u2060적\u2060으\u2060로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K\u2060-\u2060Pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
       empty: '등록된 프로젝트가 없습니다. Admin CMS에서 추가해 주세요.',
       dbError: '포트폴리오 준비 중입니다. 데이터베이스를 연결해 주세요.',
       photoUnit: '장',
@@ -247,13 +247,13 @@ export const t = {
     serviceItems: {
       pocketdrop: {
         category: '포토카드 & 굿즈',
-        title: 'PocketDrop (앱 / 온라인)',
+        title: 'PocketDrop (앱 / 온\u2060라\u2060인)',
         subtitle: '디지털 포토카드 수집 앱 & 리워드',
-        description: 'PocketDrop은 K-Pop 아티스트의 공식 라이선스를 활용한 공식 디지털 포토카드 수집 플랫폼입니다. 이용자는 디지털 포토카드를 수집하고, 1세트를 완성하면 실물 포토카드를 획득할 수 있으며, K-Pop 아티스트의 맞춤형 AI 영상 리워드를 해금할 수 있습니다.',
+        description: 'PocketDrop은 K\u2060-\u2060Pop 아티스트의 공식 라이선스를 활용한 공식 디지털 포토카드 수집 플랫폼입니다. 이용자는 디지털 포토카드를 수집하고, 1세트를 완성하면 실물 포토카드를 획득할 수 있으며, K\u2060-\u2060Pop 아티스트의 맞춤형 AI 영상 리워드를 해금할 수 있습니다.',
       },
       pic2go: {
         category: '포토카드 & 굿즈',
-        title: 'PIC2GO (키오스크 / 오프라인)',
+        title: 'PIC2GO (키오스크 / 오\u2060프\u2060라\u2060인)',
         subtitle: '아티스트 포토 출력 키오스크 머신',
         description: '현장에서 팬들이 K-Pop 아티스트의 특별 에디션 실물 포토카드를 즉석에서 생성하고 출력할 수 있는 자동 사진 인쇄 키오스크 머신 서비스입니다.',
       },
