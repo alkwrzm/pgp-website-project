@@ -19,17 +19,24 @@ export async function PUT(
     const finalImages = Array.isArray(images) && images.length > 0 ? images : (imageUrl ? [imageUrl] : []);
     const primaryImage = imageUrl || finalImages[0] || '';
 
+    const updateData: any = {
+      title,
+      category,
+      imageUrl: primaryImage,
+      images: finalImages,
+      description,
+      ...(typeof isActive === 'boolean' && { isActive }),
+    };
+
+    if (eventDate) {
+      updateData.eventDate = new Date(eventDate);
+    } else if (eventDate === null || eventDate === '') {
+      updateData.eventDate = null;
+    }
+
     const project = await prisma.project.update({
       where: { id },
-      data: {
-        title,
-        category,
-        imageUrl: primaryImage,
-        images: finalImages,
-        ...(eventDate && { eventDate: new Date(eventDate) }),
-        description,
-        ...(typeof isActive === 'boolean' && { isActive }),
-      } as any,
+      data: updateData,
     });
 
     return NextResponse.json(project);

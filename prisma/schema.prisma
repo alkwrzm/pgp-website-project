@@ -9,16 +9,16 @@ datasource db {
 }
 
 model Project {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   title       String
   category    String
   imageUrl    String
-  images      String[] @default([])
-  eventDate   DateTime
+  images      String[]  @default([])
+  eventDate   DateTime?
   description String?
-  order       Int      @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
+  order       Int       @default(0)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
 }
 
 model Service {
