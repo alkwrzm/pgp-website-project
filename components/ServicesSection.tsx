@@ -145,7 +145,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
     return {
       title: lang === 'ko' ? 'PocketDrop (앱 / 온\u2060라\u2060인)' : lang === 'en' ? 'PocketDrop (Application / Online)' : service.title,
       subtitle: lang === 'ko' ? '디지털 포토카드 수집 및 리워드 앱' : lang === 'en' ? 'Digital photocard collection & reward app' : (service.subtitle || ''),
-      category: lang === 'ko' ? '포토카드 & 굿즈' : 'Photocard & Merchandise',
+      category: lang === 'ko' ? 'K-Pop 아이돌 포토카드 & 굿즈' : 'K-Pop Idol Photocard & Merchandise',
       description: lang === 'ko'
         ? 'PocketDrop은 공식 라이선스를 보유한 K\u2060-\u2060Pop 아티스트의 디지털 포토카드를 수집할 수 있는 플랫폼입니다. 사용자는 디지털 포토카드를 수집하고, 세트를 완성하여 한정판 미공개 실물 포토카드를 받을 수 있으며, 좋아하는 K\u2060-\u2060Pop 아티스트의 맞춤형 AI 영상 메시지를 받으실수 있습니다.'
         : lang === 'en'
@@ -158,7 +158,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
     return {
       title: lang === 'ko' ? 'PIC2GO (키오스크 / 오\u2060프\u2060라\u2060인)' : lang === 'en' ? 'PIC2GO (Kiosk / Offline)' : service.title,
       subtitle: lang === 'ko' ? '아이돌 포토 컬렉션 출력 키오스크 기기' : lang === 'en' ? 'Idol photo collection printing kiosk machine' : (service.subtitle || ''),
-      category: lang === 'ko' ? '아이돌 포토 & 굿즈' : 'Idol Photo & Merchandise',
+      category: lang === 'ko' ? 'K-Pop 아이돌 포토 & 굿즈' : 'K-Pop Idol Photo & Merchandise',
       description: lang === 'ko'
         ? 'PIC2GO는 K-Pop 아이돌의 공식 라이선스 미공개 사진을 즉시 출력할 수 있는 키오스크 서비스입니다. PIC2GO에서만 만나볼 수 있는 독점적인 미공개 사진 컬렉션을 통해 팬들에게 더욱 특별한 경험을 제공합니다. 사용자는 원하는 아티스트 이름이나 사진을 검색한 후, 마음에 드는 사진을 선택하여 키오스크에서 바로 출력할 수 있습니다. 빠르고 간편하며 즐거운 이용 과정을 통해 PIC2GO는 K-Pop 아이돌 사진을 더욱 특별하게 소장할 수 있는 개인화된 경험을 제공하며, PIC2GO에서만 얻을 수 있는 독점적인 기념품을 즉시 가져갈 수 있습니다.'
         : lang === 'en'
@@ -182,14 +182,14 @@ function getLocalizedServiceContent(service: Service, lang: string) {
 
   if (titleLower.includes('iklan') || titleLower.includes('advertising') || titleLower.includes('model') || titleLower.includes('talent')) {
     return {
-      title: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising/Talent Agency' : 'Agensi Iklan/Model',
-      subtitle: lang === 'ko' ? '인도네시아 브랜드 & 한국 아티스트 매칭' : lang === 'en' ? 'Connecting Indonesian Brands & Korean Idols' : (service.subtitle || ''),
-      category: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising/Talent Agency' : 'Agensi Iklan/Model',
+      title: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising & Model Agency' : 'Agensi Iklan/Model',
+      subtitle: lang === 'ko' ? '인도네시아 브랜드와 한국 K\u2060-\u2060Pop 아이돌 매칭, 한국 브랜드와 한국 및 인도네시아 아티스트 매칭' : lang === 'en' ? 'Connecting Indonesian Brands with Korean K\u2060-\u2060Pop Idols, and Connecting Korean Brands with Korean and Indonesian Artists' : 'Penghubung Brand Indonesia dengan Idol Korea dan Penghubung Brand Korea dengan Artis Indonesia',
+      category: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising & Model Agency' : 'Agensi Iklan/Model',
       description: lang === 'ko'
-        ? '인도네시아에 진출하는 한국 기업과 인도네시아 아티스트를 광고모델 또는 제품모델로 연결해 드릴 것이며 한국의 상품이 인도네시아 마케팅 하는 것에 대해 크게 도움드릴 수 있도록 하겠습니다.'
+        ? '인도네시아 브랜드 상품의 광고 모델 및 제품 모델로 한국 아이돌 가수 또는 한국 배우를 모델로 연결해 드릴것이며 상품 모델로 결정된 K\u2060-\u2060Pop 아이돌 포토카드를 제작하여 상품 판매시 증정할 수 있도록 하겠습니다. 또한 인도네시아에 진출하는 한국 브랜드 상품에 한국 또는 인도네시아 아티스트를 광고 모델 및 제품 모델로 연결해 드릴것이며 한국 상품의 인도네시아 마케팅에'
         : lang === 'en'
-          ? 'We will connect Korean K-pop idols and actors as advertising models or product ambassadors for products manufactured in Indonesia. For artists selected as product models, we will produce exclusive photocards and plan promotional events where these photocards will be distributed as special gifts with product purchases.'
-          : 'Kami akan menghubungkan penyanyi idol Korea dan aktor Korea sebagai model iklan atau model produk untuk produk-produk yang diproduksi di Indonesia. Untuk artis yang telah dipilih sebagai model produk, kami akan membuat photocard eksklusif dan juga merencanakan pemberian photocard sebagai hadiah dengan pembelian produk.',
+          ? 'We will help connect K\u2060-\u2060pop idols and Korean actors with Indonesian brand products as advertising models and product ambassadors. We will also produce K\u2060-\u2060pop idol photocards featuring the selected models, which can be included as promotional gifts with product purchases. In addition, for Korean brand products entering the Indonesian market, we will help connect Korean or Indonesian artists as advertising models and product ambassadors. We will provide significant support for the marketing and promotion of Korean products in Indonesia.'
+          : 'Kami akan membantu menghubungkan idol K\u2060-\u2060Pop atau aktor Korea sebagai model iklan dan model produk untuk produk merek Indonesia. Selain itu, kami akan membuat photocard idol K\u2060-\u2060Pop yang telah dipilih sebagai model produk, sehingga photocard tersebut dapat diberikan sebagai hadiah saat produk dijual. Selanjutnya, untuk produk merek Korea yang memasuki pasar Indonesia, kami akan membantu menghubungkan dengan artis Korea atau artis Indonesia sebagai model iklan dan model produk, serta memberikan dukungan yang besar terhadap pemasaran produk Korea di Indonesia.',
     };
   }
 

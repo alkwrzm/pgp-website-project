@@ -234,7 +234,7 @@ export const t = {
       city: '자카르타, 인도네시아',
       formTitle: '문의 서식',
       nameLabel: '이름 / 회사명',
-      namePlaceholder: '성함 또는 법인명을 입력하세요',
+      namePlaceholder: '성함 또는 회사명을 입력하세요',
       emailLabel: '이메일',
       emailPlaceholder: 'email@example.com',
       messageLabel: '문의 내용 / 협력 제안',
@@ -246,13 +246,13 @@ export const t = {
     },
     serviceItems: {
       pocketdrop: {
-        category: '포토카드 & 굿즈',
+        category: 'K-Pop 아이돌 포토카드 & 굿즈',
         title: 'PocketDrop (앱 / 온\u2060라\u2060인)',
         subtitle: '디지털 포토카드 수집 앱 & 리워드',
         description: 'PocketDrop은 K\u2060-\u2060Pop 아티스트의 공식 라이선스를 활용한 공식 디지털 포토카드 수집 플랫폼입니다. 이용자는 디지털 포토카드를 수집하고, 1세트를 완성하면 실물 포토카드를 획득할 수 있으며, K\u2060-\u2060Pop 아티스트의 맞춤형 AI 영상 리워드를 해금할 수 있습니다.',
       },
       pic2go: {
-        category: '포토카드 & 굿즈',
+        category: 'K-Pop 아이돌 포토 & 굿즈',
         title: 'PIC2GO (키오스크 / 오\u2060프\u2060라\u2060인)',
         subtitle: '아티스트 포토 출력 키오스크 머신',
         description: '현장에서 팬들이 K-Pop 아티스트의 특별 에디션 실물 포토카드를 즉석에서 생성하고 출력할 수 있는 자동 사진 인쇄 키오스크 머신 서비스입니다.',
@@ -265,9 +265,9 @@ export const t = {
       },
       agency: {
         category: '광고 & 모델 에이전시',
-        title: '광고 / 모델 에이전시',
-        subtitle: '인도네시아 브랜드 & 한국 아티스트 매칭',
-        description: '인도네시아 주요 브랜드와 한국의 유명 K-Pop 아이돌 및 아티스트를 광고 모델 및 브랜드 앰버서더로 연결하는 광고 에이전시 서비스입니다.',
+        title: '광고 및 모델 에이전시',
+        subtitle: '인도네시아 브랜드와 한국 K\u2060-\u2060Pop 아이돌 매칭, 한국 브랜드와 한국 및 인도네시아 아티스트 매칭',
+        description: '인도네시아 브랜드 상품의 광고 모델 및 제품 모델로 한국 아이돌 가수 또는 한국 배우를 모델로 연결해 드릴것이며 상품 모델로 결정된 K\u2060-\u2060Pop 아이돌 포토카드를 제작하여 상품 판매시 증정할 수 있도록 하겠습니다. 또한 인도네시아에 진출하는 한국 브랜드 상품에 한국 또는 인도네시아 아티스트를 광고 모델 및 제품 모델로 연결해 드릴것이며 한국 상품의 인도네시아 마케팅에',
       },
       bridge: {
         category: '기업 연결 에이전시',

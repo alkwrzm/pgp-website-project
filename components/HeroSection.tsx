@@ -105,7 +105,7 @@ export default function HeroSection() {
           </div>
           <div className="text-left">
             <span className="block text-xs font-bold leading-tight">PocketDrop</span>
-            <span className="block text-[10px] text-[#607D94] font-mono">Photocard App</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">K-Pop Idol Photocard App</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function HeroSection() {
           </div>
           <div className="text-left">
             <span className="block text-xs font-bold leading-tight">PIC2GO</span>
-            <span className="block text-[10px] text-[#607D94] font-mono">Photo Kiosks</span>
+            <span className="block text-[10px] text-[#607D94] font-mono">K-Pop Idol Photo Kiosks</span>
           </div>
         </div>
       </div>
