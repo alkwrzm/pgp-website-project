@@ -51,10 +51,16 @@ export default function PortfolioSection({
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#102B3F] mb-4">{text.title}</h2>
-          <p className="max-w-5xl text-base md:text-lg font-normal leading-relaxed text-[#607D94]">
-            {text.desc}
-          </p>
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#102B3F] mb-4 [word-break:keep-all]">{text.title}</h2>
+          {lang === 'ko' ? (
+            <p className="max-w-5xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] [word-break:keep-all]">
+              PT. PGP INT PACIFIC은 한국의 <span className="whitespace-nowrap">LIVECONNECT CO., LTD가</span> 인도네시아 자카르타에 <span className="whitespace-nowrap">설립한</span> 회사로서 LIVECONNECT는 글로벌 전시 프로젝트와 <span className="whitespace-nowrap">공연을</span> 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 <span className="whitespace-nowrap">나라의</span> <span className="whitespace-nowrap font-semibold text-[#1A7B9B]">K-Pop</span> 팬들에게 새로운 감동과 기쁨을 <span className="whitespace-nowrap">드려왔습니다.</span>
+            </p>
+          ) : (
+            <p className="max-w-5xl text-base md:text-lg font-normal leading-relaxed text-[#607D94] [word-break:keep-all]">
+              {text.desc}
+            </p>
+          )}
         </div>
 
         {/* Poster Grid - 3 Items Per Row */}

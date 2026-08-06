@@ -220,7 +220,7 @@ export const t = {
     portfolio: {
       badge: '[ 주요 프로젝트 ]',
       title: '한국에서의 최근 프로젝트',
-      desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT\u00A0CO.,\u2060\u00A0LTD가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT는 글로벌 전시 프\u2060로\u2060젝\u2060트\u2060와 공연을 성\u2060공\u2060적\u2060으\u2060로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K\u2060-\u2060Pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
+      desc: 'PT. PGP INT PACIFIC은 한국의 LIVECONNECT CO., LTD가 인도네시아 자카르타에 설립한 회사로서 LIVECONNECT는 글로벌 전시 프로젝트와 공연을 성공적으로 이끌어왔고 한국,일본,중국, 미국 등 여러 나라의 K-Pop 팬들에게 새로운 감동과 기쁨을 드려왔습니다.',
       empty: '등록된 프로젝트가 없습니다. Admin CMS에서 추가해 주세요.',
       dbError: '포트폴리오 준비 중입니다. 데이터베이스를 연결해 주세요.',
       photoUnit: '장',
