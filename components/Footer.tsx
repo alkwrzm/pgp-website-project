@@ -16,21 +16,18 @@ export default function Footer() {
     { label: 'PIC2GO (키오스크 / 오\u2060프\u2060라\u2060인)', href: '/#services' },
     { label: 'K-Pop 콘서트와 팬미팅', href: '/#services' },
     { label: '광고 및 모델 에이전시', href: '/#services' },
-    { label: '기업 파트너십 에이전시', href: '/#services' },
     { label: '인플루언서 콜라보레이션', href: '/#services' },
   ] : lang === 'en' ? [
     { label: 'PocketDrop (Application / Online)', href: '/#services' },
     { label: 'PIC2GO (Kiosk / Offline)', href: '/#services' },
     { label: 'K-Pop Concert & Fanmeeting', href: '/#services' },
     { label: 'Advertising/Talent Agency', href: '/#services' },
-    { label: 'Business Partnership Agency', href: '/#services' },
     { label: 'Collaboration with Influencer', href: '/#services' },
   ] : [
     { label: 'PocketDrop (Aplikasi / Online)', href: '/#services' },
     { label: 'PIC2GO (Kiosk / Offline)', href: '/#services' },
     { label: 'Konser dan Fanmeeting K-Pop', href: '/#services' },
     { label: 'Agensi Iklan/Model', href: '/#services' },
-    { label: 'Agensi Penghubung Perusahaan', href: '/#services' },
     { label: 'Kerjasama Influencer', href: '/#services' },
   ];
 

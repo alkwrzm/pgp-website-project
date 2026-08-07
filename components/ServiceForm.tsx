@@ -152,7 +152,6 @@ export default function ServiceForm({ initialData }: { initialData?: ServiceData
             <option value="Photocard & Merchandise">Photocard & Merchandise</option>
             <option value="Konser & Fanmeeting">Konser & Fanmeeting K-Pop</option>
             <option value="Agensi Iklan & Model">Agensi Iklan & Model</option>
-            <option value="Agensi Penghubung Perusahaan">Agensi Penghubung Perusahaan</option>
             <option value="Kerjasama Influencer">Kerjasama Influencer</option>
           </select>
         </div>

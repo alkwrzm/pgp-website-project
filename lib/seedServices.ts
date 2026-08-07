@@ -42,18 +42,6 @@ export const INITIAL_SERVICES = [
     order: 4,
   },
   {
-    title: 'Agensi Penghubung Perusahaan',
-    subtitle: 'Penghubung Brand Korea & Artis Indonesia',
-    category: 'Agensi Penghubung Perusahaan',
-    description: 'Kami menghubungkan perusahaan Korea yang ingin memasuki pasar Indonesia dengan artis Indonesia sebagai model iklan dan brand ambassador, untuk membantu membangun strategi pemasaran yang lebih kuat serta meningkatkan kesadaran merek di Indonesia. Melalui kolaborasi strategis, kami bertujuan mendukung brand Korea dalam mempromosikan produk mereka dan memperluas kehadirannya di pasar Indonesia.',
-    images: [
-      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop'
-    ],
-    order: 5,
-  },
-  {
     title: 'Kerjasama Influencer',
     subtitle: 'Kemitraan Influencer Indonesia & Korea',
     category: 'Kerjasama Influencer',

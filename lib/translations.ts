@@ -75,12 +75,7 @@ export const t = {
         subtitle: 'Penghubung Brand Indonesia & Idol Korea',
         description: 'Agensi periklanan yang menghubungkan merek-merek terkemuka di Indonesia dengan artis & Idol K-Pop ternama Korea sebagai bintang iklan dan ambassador.',
       },
-      bridge: {
-        category: 'AGENSI PENGHUBUNG PERUSAHAAN',
-        title: 'Agensi Penghubung Perusahaan',
-        subtitle: 'Penghubung Brand Korea & Artis Indonesia',
-        description: 'Agensi penghubung strategis untuk brand Korea yang masuk ke pasar Indonesia dengan menggandeng selebriti dan artis ternama Indonesia.',
-      },
+
       influencer: {
         category: 'KERJASAMA INFLUENCER',
         title: 'Kerjasama Influencer',
@@ -172,12 +167,7 @@ export const t = {
         subtitle: 'Connecting Indonesian Brands & Korean Idols',
         description: 'Advertising agency connecting leading Indonesian brands with prominent South Korean K-Pop idols and stars as brand ambassadors and commercial models.',
       },
-      bridge: {
-        category: 'CORPORATE LIAISON AGENCY',
-        title: 'Corporate Liaison Agency',
-        subtitle: 'Connecting Korean Brands & Indonesian Artists',
-        description: 'Strategic liaison agency connecting South Korean brands entering the Indonesian market with top Indonesian celebrities and artists.',
-      },
+
       influencer: {
         category: 'INFLUENCER PARTNERSHIP',
         title: 'Influencer Collaboration',
@@ -266,15 +256,10 @@ export const t = {
       agency: {
         category: '광고 & 모델 에이전시',
         title: '광고 및 모델 에이전시',
-        subtitle: '인도네시아 브랜드와 한국 K\u2060-\u2060Pop 아이돌 매칭, 한국 브랜드와 한국 및 인도네시아 아티스트 매칭',
-        description: '인도네시아 브랜드 상품의 광고 모델 및 제품 모델로 한국 아이돌 가수 또는 한국 배우를 모델로 연결해 드릴것이며 상품 모델로 결정된 K\u2060-\u2060Pop 아이돌 포토카드를 제작하여 상품 판매시 증정할 수 있도록 하겠습니다. 또한 인도네시아에 진출하는 한국 브랜드 상품에 한국 또는 인도네시아 아티스트를 광고 모델 및 제품 모델로 연결해 드릴것이며 한국 상품의 인도네시아 마케팅에',
+        subtitle: '인\u2060도\u2060네\u2060시\u2060아 브랜드와 한국 K\u2060-\u2060Pop 아이돌 매칭, 한국 브랜드와 한국 및 인\u2060도\u2060네\u2060시\u2060아 아티스트 매칭',
+        description: '인도네시아 브랜드 상품의 광고 모델 및 제품 모델로 한국 아이돌 가수 또는 한국 배우를 모델로 연결해 드릴것이며 상품 모델로 결정된 K\u2060-\u2060Pop 아이돌 포토카드를 제작하여 상품 판매시 증정할 수 있도록 하겠습니다. 또한 인도네시아에 진출하는 한국 브랜드 상품에 한국 또는 인도네시아 아티스트를 광고 모델 및 제품 모델로 연결해 드릴것이며 한국 상품의 인도네시아 마케팅에 크게 도움드리도록 하겠습니다.',
       },
-      bridge: {
-        category: '기업 연결 에이전시',
-        title: '기업 연결 에이전시',
-        subtitle: '한국 브랜드 & 인도네시아 아티스트 매칭',
-        description: '인도네시아 시장에 진출하는 한국 기업 및 브랜드에 인도네시아 탑 셀럽과 아티스트를 매칭해 주는 전략적 비즈니스 연결 에이전시입니다.',
-      },
+
       influencer: {
         category: '인플루언서 협업',
         title: '인플루언서 컬래버레이션',

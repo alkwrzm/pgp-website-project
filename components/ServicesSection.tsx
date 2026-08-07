@@ -173,7 +173,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
       subtitle: lang === 'ko' ? '이벤트 주최 및 팬사인회 기획' : lang === 'en' ? 'Event hosting & fansign organization' : (service.subtitle || ''),
       category: lang === 'ko' ? '콘서트 & 팬미팅' : lang === 'en' ? 'Concert & Fanmeeting' : 'Konser & Fanmeeting',
       description: lang === 'ko'
-        ? '인도네시아에서 K\u2011Pop 아이돌들과 K\u2011Drama 배우들의 콘서트 및 팬미팅 그리고 팬싸인회를 통해서 팬들에게 더 큰 즐거움과 기쁨을 드리도록 하겠으며 콘서트 현장과 팬미팅 현장에서 아이돌그리고 배우의 MD 판매와 K\u2011Food 판매도 진행하도록 하겠습니다.'
+        ? '인도네시아에서 K\u2011Pop 아이돌들과 K\u2011Drama 배우들의 콘서트 및 팬미팅 그리고 팬싸인회를 통해서 팬들에게 더 큰 즐거움과 기쁨을 드리도록 하겠으며 콘서트 현장과 팬미팅 현장에서 아이돌 그리고 배우의 MD 판매와 K\u2011Food 판매도 진행하도록 하겠습니다.'
         : lang === 'en'
           ? 'In Indonesia, through concerts, fanmeetings, and fan signing events featuring K\u2011Pop Idol and K\u2011Drama actors, we will provide fans with greater enjoyment and happiness. Through these events, we will also provide official merchandise (MD) from artists and actors, along with K\u2011Food offerings at concert and fan meeting venues'
           : 'Di Indonesia, melalui konser, fanmeeting, dan fan signing bersama K\u2011Pop Idol serta aktor K\u2011drama, kami berupaya untuk memberikan dan kebahagiaan yang lebih besar para penggemar. Di lokasi konser dan lokasi fanmeeting, kami juga akan melakukan penjualan merchandise dari idol dan aktor, serta penjualan K\u2011Food.',
@@ -183,7 +183,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
   if (titleLower.includes('iklan') || titleLower.includes('advertising') || titleLower.includes('model') || titleLower.includes('talent')) {
     return {
       title: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising & Model Agency' : 'Agensi Iklan/Model',
-      subtitle: lang === 'ko' ? '인도네시아 브랜드와 한국 K\u2060-\u2060Pop 아이돌 매칭, 한국 브랜드와 한국 및 인도네시아 아티스트 매칭' : lang === 'en' ? 'Connecting Indonesian Brands with Korean K\u2060-\u2060Pop Idols, and Connecting Korean Brands with Korean and Indonesian Artists' : 'Penghubung Brand Indonesia dengan Idol Korea dan Penghubung Brand Korea dengan Artis Indonesia',
+      subtitle: lang === 'ko' ? '인\u2060도\u2060네\u2060시\u2060아 브랜드와 한국 K\u2060-\u2060Pop 아이돌 매칭, 한국 브랜드와 한국 및 인\u2060도\u2060네\u2060시\u2060아 아티스트 매칭' : lang === 'en' ? 'Connecting Indonesian Brands with Korean K\u2060-\u2060Pop Idols, and Connecting Korean Brands with Korean and Indonesian Artists' : 'Penghubung Brand Indonesia dengan Idol Korea dan Penghubung Brand Korea dengan Artis Indonesia dan Korea',
       category: lang === 'ko' ? '광고 및 모델 에이전시' : lang === 'en' ? 'Advertising & Model Agency' : 'Agensi Iklan/Model',
       description: lang === 'ko'
         ? '인도네시아 브랜드 상품의 광고 모델 및 제품 모델로 한국 아이돌 가수 또는 한국 배우를 모델로 연결해 드릴것이며 상품 모델로 결정된 K\u2060-\u2060Pop 아이돌 포토카드를 제작하여 상품 판매시 증정할 수 있도록 하겠습니다. 또한 인도네시아에 진출하는 한국 브랜드 상품에 한국 또는 인도네시아 아티스트를 광고 모델 및 제품 모델로 연결해 드릴것이며 한국 상품의 인도네시아 마케팅에'
@@ -193,18 +193,7 @@ function getLocalizedServiceContent(service: Service, lang: string) {
     };
   }
 
-  if (titleLower.includes('penghubung perusahaan') || titleLower.includes('connector') || titleLower.includes('business partnership')) {
-    return {
-      title: lang === 'ko' ? '기업 파트너십 에이전시' : lang === 'en' ? 'Business Partnership Agency' : 'Agensi Penghubung Perusahaan',
-      subtitle: lang === 'ko' ? '한국 브랜드 & 인도네시아 아티스트 매칭' : lang === 'en' ? 'Connecting Korean Brands & Indonesian Artists' : (service.subtitle || ''),
-      category: lang === 'ko' ? '기업 파트너십 에이전시' : lang === 'en' ? 'Business Partnership Agency' : 'Agensi Penghubung Perusahaan',
-      description: lang === 'ko'
-        ? '인도네시아에서 생산되는 상품의 광고모델 또는 제품모델로 한국 아이돌 가수 및 한국 배우들을 연결해 드릴 것이며 상품 모델로 결정된 아티스트의 포토카드를 제작하여 상품 판매 시 포토카드를 증정하는 행사도 계획하도록 하겠습니다.'
-        : lang === 'en'
-          ? 'We connect Korean companies entering the Indonesian market with Indonesian artists as advertising models and brand ambassadors, helping them develop effective marketing strategies and enhance brand awareness in Indonesia. Through strategic collaborations, we support Korean brands in successfully promoting their products and expanding their presence in the Indonesian market.'
-          : 'Kami menghubungkan perusahaan Korea yang ingin memasuki pasar Indonesia dengan artis Indonesia sebagai model iklan dan brand ambassador, untuk membantu membangun strategi pemasaran yang lebih kuat serta meningkatkan kesadaran merek di Indonesia. Melalui kolaborasi strategis, kami bertujuan mendukung brand Korea dalam mempromosikan produk mereka dan memperluas kehadirannya di pasar Indonesia.',
-    };
-  }
+
 
   if (titleLower.includes('influencer')) {
     return {
